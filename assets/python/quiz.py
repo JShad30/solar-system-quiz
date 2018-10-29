@@ -28,14 +28,139 @@ def solar_system_quiz():
     question_one_answer = input()
     if question_one_answer.lower() == "b":
         score += 1
+    elif question_one_answer.lower() == "a" or question_one_answer.lower() == "c":
+        score += 0
+    else:
+        print("Invalid input\n")
+        
+    print(str(score))
     
-    #Question two            
+    #Question two  
+    """
     print(question_two)
     question_two_answer = input()
     if question_two_answer.lower() == "a":
         score += 1
+        
+    #Question three            
+    print(question_three)
+    question_three_answer = input()
+    if question_three_answer.lower() == "b":
+        score += 1
+        
+    #Question four            
+    print(question_four)
+    question_four_answer = input()
+    if question_four_answer.lower() == "a":
+        score += 1
+        
+    #Question five            
+    print(question_five)
+    question_five_answer = input()
+    if question_five_answer.lower() == "b":
+        score += 1
+        
+    #Question six            
+    print(question_six)
+    question_six_answer = input()
+    if question_six_answer.lower() == "a":
+        score += 1
+        
+    #Question seven            
+    print(question_seven)
+    question_seven_answer = input()
+    if question_seven_answer.lower() == "c":
+        score += 1
+        
+    #Question eight            
+    print(question_eight)
+    question_eight_answer = input()
+    if question_eight_answer.lower() == "c":
+        score += 1
+        
+    #Question nine            
+    print(question_nine)
+    question_nine_answer = input()
+    if question_nine_answer.lower() == "b":
+        score += 1
+        
+    #Question ten            
+    print(question_ten)
+    question_ten_answer = input()
+    if question_ten_answer.lower() == "c":
+        score += 1
+        
+    #Question eleven            
+    print(question_eleven)
+    question_eleven_answer = input()
+    if question_eleven_answer.lower() == "a":
+        score += 1
+        
+    #Question twelve            
+    print(question_twelve)
+    question_twelve_answer = input()
+    if question_twelve_answer.lower() == "b":
+        score += 1
+        
+    #Question thirteen            
+    print(question_thirteen)
+    question_thirteen_answer = input()
+    if question_thirteen_answer.lower() == "c":
+        score += 1
+        
+    #Question fourteen            
+    print(question_fourteen)
+    question_fourteen_answer = input()
+    if question_fourteen_answer.lower() == "b":
+        score += 1
+        
+    #Question fifteen            
+    print(question_fifteen)
+    question_fifteen_answer = input()
+    if question_fifteen_answer.lower() == "a":
+        score += 1
+        
+    #Question sixteen            
+    print(question_sixteen)
+    question_sixteen_answer = input()
+    if question_sixteen_answer.lower() == "c":
+        score += 1
+        
+    #Question seventeen            
+    print(question_seventeen)
+    question_seventeen_answer = input()
+    if question_seventeen_answer.lower() == "b":
+        score += 1
+        
+    #Question eighteen            
+    print(question_eighteen)
+    question_eighteen_answer = input()
+    if question_eighteen_answer.lower() == "a":
+        score += 1
+        
+    #Question nineteen            
+    print(question_nineteen)
+    question_nineteen_answer = input()
+    if question_nineteen_answer.lower() == "b":
+        score += 1
+        
+    #Question twenty            
+    print(question_twenty)
+    question_twenty_answer = input()
+    if question_twenty_answer.lower() == "a":
+        score += 1
             
-    print(str(score))
+    if score == 20:
+        print("You scored {}. That is a perfect score. Very well done!".format(score)
+    elif score > 15 and score <= 19:
+        print("You scores " + str(score) + " out of 20. Very good score. You know your stuff!")
+    elif score > 10 and score <= 15:
+        print("You scored " + str(score) + " out of 20. Good effort!")
+    elif score > 0 and score <= 10:
+        print("You only scored " + str(score) + " out of 20. That's not a good score. Go to the Solar System info section.")
+    else:
+        print("You scored " + str(score) + " out of 20. Go to Solor System info section.")
+    """
 
 if __name__ == '__main__':
     solar_system_quiz()

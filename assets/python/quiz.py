@@ -20,23 +20,17 @@ question_nineteen = "19. Makemake is part of the asteroid belt. True or false?\n
 question_twenty = "20. Which of these is a comet?\na. Halley's\nb. Eris\nc. Callisto\nType the letter of your answer"
 
 def solar_system_quiz():
-        
-    score = 0
     
+    score = 0
     #Question one
     print(question_one)
     question_one_answer = input()
     if question_one_answer.lower() == "b":
         score += 1
-    elif question_one_answer.lower() == "a" or question_one_answer.lower() == "c":
-        score += 0
-    else:
-        print("Invalid input\n")
-        
-    print(str(score))
-    
+    elif question_one_answer.lower() != "a" and question_one_answer.lower() != "c":
+        print("Invalid input... try again")
+
     #Question two  
-    """
     print(question_two)
     question_two_answer = input()
     if question_two_answer.lower() == "a":
@@ -151,17 +145,15 @@ def solar_system_quiz():
         score += 1
             
     if score == 20:
-        print("You scored {}. That is a perfect score. Very well done!".format(score)
+        print("You scored {}. That is a perfect score. Very well done!".format(score))
     elif score > 15 and score <= 19:
-        print("You scores " + str(score) + " out of 20. Very good score. You know your stuff!")
+        print("You scored {} out of 20. Very good score. You know your stuff!".format(score))
     elif score > 10 and score <= 15:
-        print("You scored " + str(score) + " out of 20. Good effort!")
+        print("You scored {} out of 20. Good effort!".format(score))
     elif score > 0 and score <= 10:
-        print("You only scored " + str(score) + " out of 20. That's not a good score. Go to the Solar System info section.")
+        print("You only scored {} out of 20. That's not a good score. Go to the Solar System info section.".format(score))
     else:
-        print("You scored " + str(score) + " out of 20. Go to Solor System info section.")
-    """
-
+        print("You scored {} out of 20. Go to Solor System info section.".format(score))
+    
 if __name__ == '__main__':
     solar_system_quiz()
-

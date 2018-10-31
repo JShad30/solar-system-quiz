@@ -5,6 +5,25 @@
     font-family: Orbitron;
 }
 
+/*Main image*/
+
+.content {
+    background-image: url("../images/stars.jpg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.image-shade {
+    background-color: rgb(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: inherit;
+}
+
 /*Top Bar Section*/
 
 .top-bar {
@@ -24,22 +43,12 @@
     align-items: center;
 }
 
-/*Main image*/
+/*Main part of the page*/
 
-.main-image {
-    background-image: url("../images/stars.jpg");
-    background-size: cover;
-    background-position: right;
-    background-repeat: no-repeat;
-    width: 100%;
-    min-height: 100vh;
-}
-
-.main-image-shade {
-    background-color: rgb(0, 0, 0, 0.5);
+.main-content-section {
     display: flex;
     justify-content: center;
-    min-height: inherit;
+    align-items: center;
 }
 
 .container {
@@ -89,14 +98,15 @@
     font-size: 1.2em;
 }
 
+/*Links to other pages*/
+
 .text-overview h4 {
     width: 100%;
-    background-color: #fff;
+    background-color: #333;
     height: 65px;
     margin: 15px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 .text-overview h4:hover {
@@ -107,16 +117,16 @@
 }
 
 .text-overview h4 a {
-    color: #000;
+    color: #fff;
     text-decoration: none;
     font-size: 1.6em;
-}
-
-.text-overview h4 a:hover {
-    transition-property: color;
-    transition-duration: 0.3s;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.3;
     transition-timing-function: ease-in-out;
-    color: #fff;
 }
 
 /*Footer area*/
@@ -124,19 +134,19 @@
 /*Social media links*/
 
 .footer-area {
-    width: 100%;
-    background-color: #000;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 80px;
 }
 
 .social-links {
-    padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    max-width: 600px;
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -148,10 +158,11 @@
 
 .social-links li a {
     text-decoration: none;
+    font-size: 30px;
+    color: #fff;
 }
 
 .social-links li a i {
-    font-size: 30px;
     display: flex;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;

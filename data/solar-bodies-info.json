@@ -1,0 +1,74 @@
+[
+    {
+        "name": "The Sun",
+        "description": "The sun is the star about which the solar system rotates. It is believed the ",
+        "image_source": "static/images/sun.jpg",
+        "url": "nicolaus-copernicus"
+    },   
+    {
+        "name": "Mercury",
+        "description": "............",
+        "image_source": "static/images/sun.jpg",
+        "url": "percival-lowell"
+    },    
+    {
+        "name": "Venus",
+        "description": "........",
+        "image_source": "static/images/sun.jpg",
+        "url": "wernher-von-braun"
+    },    
+    {
+        "name": "Earth",
+        "description": "..........",
+        "image_source": "static/images/sun.jpg",
+        "url": "robertgoddard"
+    },    
+    {
+        "name": "Mars",
+        "description": "..........",
+        "image_source": "static/images/sun.jpg",
+        "url": "edwin-hubble"
+    },    
+    {
+        "name": "Asteroid Belt",
+        "description": "..........",
+        "image_source": "static/images/sun.jpg",
+        "url": "yuri-gargarin"
+    },    
+    {
+        "name": "Jupiter",
+        "description": "............",
+        "image_source": "static/images/sun.jpg",
+        "url": "neil-armstrong"
+    },    
+    {
+        "name": "Saturn",
+        "description": "..........",
+        "image_source": "static/images/sun.jpg",
+        "url": "chris-hadfield"
+    },
+    {
+        "name": "Uranus",
+        "description": "...........",
+        "image_source": "static/images/sun.jpg",
+        "url": "chris-hadfield"
+    },
+    {
+        "name": "Neptune",
+        "description": "Neptune, which is a gas giant, is the furthest of the planets from the sun. Discovered in ",
+        "image_source": "static/images/sun.jpg",
+        "url": "chris-hadfield"
+    },
+    {
+        "name": "Kuiper Belt",
+        "description": "The Kuiper Belt is ............",
+        "image_source": "static/images/sun.jpg",
+        "url": "chris-hadfield"
+    },
+    {
+        "name": "Oort Cloud",
+        "description": "..........",
+        "image_source": "static/images/sun.jpg",
+        "url": "chris-hadfield"
+    }    
+]

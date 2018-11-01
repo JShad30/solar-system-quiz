@@ -1,4 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Solar System Info</h1>
+<div class="intro-text">
+    <h2>The Solar System</h2>
+    <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse quisquam culpa ipsum deleniti quia beatae perferendis magnam inventore, illo libero consequuntur asperiores numquam dolores voluptatem, itaque non quod error velit tempora autem! Ad sed asperiores, suscipit, iusto quaerat soluta pariatur.</p>
+</div>
+<div class="page-links">
+    <div class="info-section">
+        <div class="text-overview">
+            <h3>The Sun</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, incidunt iusto quisquam assumenda officia, unde eveniet odio sint dolore?</p>
+            <h4 class="solar-system-link"><a href="{{ url_for('solar_info') }}">Solar System Info</a></h4>
+        </div>
+    </div>
+    <div class="quiz-section">
+        <div class="text-overview">
+            <h3>Take the quiz</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, incidunt iusto quisquam assumenda officia, unde eveniet odio sint dolore?</p>
+            <h4 class="solar-system-link"><a href="{{ url_for('solar_quiz') }}">Take Quiz</a></h4>
+        </div>
+    </div>
+</div>
 {% endblock %}

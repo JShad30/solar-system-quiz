@@ -8,7 +8,7 @@
         
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
         <title>Solar System Quiz</title>
-        <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
     </head>
     
     <body>
@@ -18,7 +18,7 @@
         
                 <section class="top-bar">
                     <div class="top-bar-content">
-                        <h1>Solar System Quiz</h1>
+                        <h1><a href="{{ url_for('index') }}">Solar System Quiz</a></h1>
                     </div>
                 </section>
                 
@@ -33,14 +33,14 @@
                                 <div class="text-overview">
                                     <h3>The Solar System</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, incidunt iusto quisquam assumenda officia, unde eveniet odio sint dolore?</p>
-                                    <h4 class="solar-system-link"><a href="{{ url_for('solar-system-info') }}">Solar System Info</a></h4>
+                                    <h4 class="solar-system-link"><a href="{{ url_for('solar_info') }}">Solar System Info</a></h4>
                                 </div>
                             </div>
                             <div class="quiz-section">
                                 <div class="text-overview">
                                     <h3>Take the quiz</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro libero, incidunt iusto quisquam assumenda officia, unde eveniet odio sint dolore?</p>
-                                    <h4 class="solar-system-link"><a href="{{ url_for('solar-system-quiz') }}">Take Quiz</a></h4>
+                                    <h4 class="solar-system-link"><a href="{{ url_for('solar_quiz') }}">Take Quiz</a></h4>
                                 </div>
                             </div>
                         </div>

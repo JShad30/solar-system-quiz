@@ -36,11 +36,15 @@
 }
 
 .top-bar-content {
-    color: #fff;
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.top-bar-content h1 a {
+    color: #fff;
+    text-decoration: none;
 }
 
 /*Main part of the page*/

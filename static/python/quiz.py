@@ -365,6 +365,12 @@ def solar_system_quiz():
     first_name = input("First Name: ")
     last_name = input("Last Name: ")
             
+    if first_name == "":
+        print("Please type your first name")
+        
+    if last_name == "":
+        print("Please type your last name")
+            
     if score == 20:
         print("Thanks for playing {}. You scored {}. That is a perfect score. Very well done!".format(first_name, score))
     elif score > 15 and score <= 19:

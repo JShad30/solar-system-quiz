@@ -10,8 +10,9 @@
 .content {
     background-image: url("../images/stars.jpg");
     background-size: cover;
-    background-position: right;
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    background-position: right;
     width: 100%;
     min-height: 100vh;
 }

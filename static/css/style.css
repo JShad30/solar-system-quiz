@@ -137,6 +137,22 @@
 
 /*Solar System Info Page*/
 
+.solar-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.solar-body-image {
+    width: 100%;
+    height: auto;
+}
+
+.solar-system-button {
+    width: 100%;
+}
+
 /*Quiz Page*/
 
 /*Footer area*/
@@ -195,6 +211,19 @@
     
     .info-section,
     .quiz-section {
+        width: 45%;
+    }
+    
+    /*Solar Info Page*/
+    
+    .solar-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .solar-section {
         width: 45%;
     }
     

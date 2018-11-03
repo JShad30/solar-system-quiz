@@ -2,16 +2,22 @@
 {% block content %}
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
+    <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio at asperiores animi cupiditate ullam maxime, pariatur deleniti labore temporibus obcaecati numquam fugiat illo aperiam in deserunt placeat, possimus nihil voluptas aut consectetur provident atque quos! Vel ipsa debitis temporibus voluptatum.</p>
 </div>
   
 {% for solar_body in solar_bodies_data %}
-<div class="solar-body">
-    <div class="solar-body-image solar-section">
-        <img src="{{ solar_body.image_source }}" alt="picture of {{ solar_body.name }}" width="100%" />
+<div class="solar-body-section">
+    <div class="solar-body-overview">
+        <h3>{{ solar_body.name }}</h3>
     </div>
-    <div class="text-overview solar-section">
-        <button id="more-info" class="solar-system-button"><h4 class="solar-system-link">{{ solar_body.name }} Info</h4></button>
-        <p>{{ solar_body.description }}</p>
+    <div class="solar-body">
+        <div class="solar-body-image solar-section">
+            <img src="{{ solar_body.image_source }}" alt="picture of {{ solar_body.name }}" width="100%" />
+        </div>
+        <div class="solar-body-overview solar-section">
+            <button id="more-info" class="solar-system-button"><h4 class="solar-system-link">More Info</h4></button>
+            <p>{{ solar_body.description }}</p>
+        </div>
     </div>
 </div>
 {% endfor %}

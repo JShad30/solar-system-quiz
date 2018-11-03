@@ -21,7 +21,7 @@
     },    
     {
         "name": "Earth",
-        "description": "Our planet is the third from the sun and the largest of the four inner planets. It is the only known body in the solar system to contain water, and therefore to contain life. It has one natural satellite which we refer to as the moon. The earth has a radius of about 4000 miles",
+        "description": "Our planet is the third from the sun and the largest of the four inner planets. It is the only known body in the solar system to contain water, and therefore to contain life. It has one natural satellite which we refer to as the moon. The earth has a radius of about 4000 miles.",
         "image_source": "static/images/earth.jpg"
     },    
     {
@@ -57,12 +57,12 @@
     {
         "name": "Kuiper Belt",
         "description": "The Kuiper Belt is a region of space beyond Neptune that has many small icy bodies. There are possibly more than a trillion comets. There are also possibly hundreds of thousands that have a radius of more than 20 miles. The largest object in the Kuiper Belt is Pluto which takes 248 years to orbit the sun. It was downgraded from a planet to a dwarf planet. Pluto has five moons, the names of which are Charon, Hydra, Nix, Styx and Kerberos. Other major, known objects in the Kuiper Belt are Sedna, Haumea, Makemake and Eris.",
-        "image_source": "static/images/kuiper-belt.jpg"
+        "image_source": "static/images/pluto.jpg"
     },
     {
         "name": "Comets",
         "description": "Comets are small icy bodies that orbit the sun. There orbital timeframes vary greatly, between 200 years for some and 30 million years for others.. It is thought that there could be many millions of them, although only 3,535 are currently known of. Among the famous comets are Hartley, Swift-Tuttle, Borrelly and Halley's. Humans have been able to send spacecraft very close to comets. In 2001, Deep Space 1 passed Borrelly photographed its nucleus. Many comets are thought to originate in the Oort Cloud.",
-        "image_source": "static/images/oort-cloud.jpg"
+        "image_source": "static/images/comet.jpg"
     }, 
     {
         "name": "Oort Cloud",

@@ -1,72 +1,143 @@
 [
     {
         "name": "The Milky Way",
+        "type": "galaxy",
+        "number_of_stars": "Approximate 300 billion",
         "description": "Space is filled with galaxies of which the Milky Way is one. There are many billions in the universe that can already be observed. Galaxies themselves are space systems composed of dust, gas, and many millions of stars. Other known galaxies include Andromeda, the Whirlpool, Messier 81, the Somrero and Triangulum.",
-        "image_source": "static/images/milky-way.jpg"
+        "image_source": "static/images/milky-way.png",
+        "id": "milky-way"
     },   
     {
         "name": "The Sun",
-        "description": "The sun is a star within the Milky Way. The solar system, of which Earth is a part, rotates around it. With a radius of 432,000 miles it is by far the largest object in the solar system. It is thought that the sun and its solar system formed approximately 4.5 billion years ago. The main gases that make up the sun are helium and hydrogen. It is the heat and energy from the sun that allows life on earth to flourish.",
-        "image_source": "static/images/sun.jpg"
+        "diameter": "864,337 miles",
+        "type": "star",
+        "temperature": "15 million degrees celsius",
+        "description": "The sun is a star within the Milky Way. The solar system, of which Earth is a part, rotates around it. It is by far the largest object in the solar system. It is thought that the sun and its solar system formed approximately 4.5 billion years ago. The main gases that make up the sun are helium and hydrogen. It is the heat and energy from the sun that allows life on earth to flourish.",
+        "image_source": "static/images/sun.png",
+        "id": "sun"
     },   
     {
         "name": "Mercury",
-        "description": "Mercury is the closest planet to the sun, and it only takes this small planet 88 days to orbit the sun. It is thought that the atmosphere was burnt by the heat of the sun in its early years. With a radius of only 1500 miles, it is not a lot bigger than the earths moon.",
-        "image_source": "static/images/mercury.jpg"
+        "diameter": "3,032 miles",
+        "distance_from_sun" : "36 million miles",
+        "orbit_duration": "88 earth days",
+        "type": "planet",
+        "moons": "0",
+        "description": "Mercury is the closest planet to the sun, and it only takes this small planet 88 days to orbit the sun. It is thought that the atmosphere was burnt by the heat of the sun in its early years. It is not a lot bigger than the earths moon.",
+        "image_source": "static/images/mercury.png",
+        "id": "mercury"
     },    
     {
         "name": "Venus",
-        "description": "Venus has the hottest atmosphere of all the planets at about 460 degrees celsius. The main gasses of its atmosphere are Carbon Dioxide and Nitrogen. Venus is only very slightly smaller than Earth. It takes Venus 225 days to orbit the sun. A day on Venus is very long, and at 243 Earth days its day is longer than its year.",
-        "image_source": "static/images/venus.jpg"
+        "diameter": "7,521 miles",
+        "distance_from_sun": "67 million miles",
+        "orbit_duration": "225 earth days",
+        "type": "planet",
+        "moons": "0",
+        "description": "Venus has the hottest atmosphere of all the planets at about 460 degrees celsius. The main gasses of its atmosphere are Carbon Dioxide and Nitrogen. Venus is only very slightly smaller than Earth. A day on Venus is very long, and at 243 Earth days its day is longer than its year.",
+        "image_source": "static/images/venus.png",
+        "id": "venus"
     },    
     {
         "name": "Earth",
-        "description": "Our planet is the third from the sun and the largest of the four inner planets. It is the only known body in the solar system to contain water, and therefore to contain life. It has one natural satellite which we refer to as the moon. The earth has a radius of about 4000 miles.",
-        "image_source": "static/images/earth.jpg"
+        "diameter": "7,918 miles",
+        "distance_from_sun": "93 million miles",
+        "orbit_duration": "1 year",
+        "type": "planet",
+        "moons": "1",
+        "description": "Our planet is the third from the sun and the largest of the four inner planets. It is the only known body in the solar system to contain conditions suitable for life. It has one natural satellite which we refer to as the moon.",
+        "image_source": "static/images/earth.png",
+        "id": "earth"
     },    
     {
         "name": "Mars",
-        "description": "Mars is the last of the inner planets, and it takes 687 earth days for it to orbit the sun. One day on Mars is slightly longer than a day on Earth, but very similar. It has a rugged, rocky terrain. It has been the target of a number of missions from Earth. The Opportunity Rover is the latest of these, although has been put on hold due to a large sandstorm. Mars has two moons, known as Phobos and Deimos.",
-        "image_source": "static/images/mars.jpg"
+        "diameter": "4,212 miles",
+        "distance_from_sun": "142 million miles",
+        "orbit_duration": "687 earth days",
+        "type": "planet",
+        "moons": "2",
+        "description": "Mars is the last of the four inner planets. A day on Mars is slightly longer than a day on Earth, but very similar. It has a rugged, rocky terrain. It has been the target of a number of missions from Earth the latest being the Opportunity Rover, although has been put on hold due to a large sandstorm. Mars has two moons, known as Phobos and Deimos.",
+        "image_source": "static/images/mars.png",
+        "id": "mars"
     },    
     {
         "name": "Asteroid Belt",
+        "width": "1AU",
+        "type": "Asteroids",
+        "largest_object": "Ceres",
+        "moons": "N/A",
         "description": "The asteroid belt is a ring of small objects that circulates the sun, between the inner rocky planets and the gas giants. Asteroids are small rocky worlds although they are much too small to be refered to as planets. There are more than a million larger asteroids, which are classed as bodies with a radius of 0.3 miles. The largest object in the asteroid belt is Ceres, which is classed as a dwarf planet. Other major objects in the asteroid belt include Vesta, Pallas and Hygiea.",
-        "image_source": "static/images/asteroid-belt.jpg"
+        "image_source": "static/images/asteroid.png",
+        "id": "asteroid-belt"
     },    
     {
         "name": "Jupiter",
-        "description": "Jupiter is the largest of the planets and the first of the the four known as the gas giants. At nearly half a million miles from the sun, it takes Jupiter 4,333 earth days to orbit the sun. Jupiter has an intense atmosphere with many storms including the famous red spot, wich has been raging for more than a century. There are 79 known moons, the most well known of these being Europa, Ganymede, Io and Callisto. It is still being investigated whether some of these moons may contain conditions suitable for life under their icy surfaces.",
-        "image_source": "static/images/jupiter.jpg"
+        "diameter": "86,881 miles",
+        "distance_from_sun": "484 million miles",
+        "orbit_duration": "11.9 earth years",
+        "type": "planet",
+        "moons": "79",
+        "description": "Jupiter is the largest of the planets and the first of the the four known as the gas giants. Jupiter has an intense atmosphere with many storms including the famous red spot, which has been raging for more than a century. The most well known of its many moons are Europa, Ganymede, Io and Callisto. It is still being investigated whether some of these moons may contain conditions suitable for life under their icy surfaces.",
+        "image_source": "static/images/jupiter.png",
+        "id": "jupiter"
     },    
     {
         "name": "Saturn",
-        "description": "Saturn is probably most famous for its large rings, and its image is typically used in cartoon depictions of planets. Saturn has a radius of just over 36,000 miles. Saturn spins on its axis at a very fast rate, with a day of just over 10 hours. However its orbit around the sun takes 29 years. Like Jupiter it has many moons, with 53 known moons. The most well known of these are Titan, Enceladus, Mimas and Phoebe.",
-        "image_source": "static/images/saturn.jpg"
+        "diameter": "72,367 miles",
+        "distance_from_sun": "891 million miles",
+        "orbit_duration": "29.5 earth years",
+        "type": "planet",
+        "moons": "53",
+        "description": "Saturn is probably most famous for its large rings, and its image is typically used in cartoon depictions of planets. Saturn spins on its axis at a very fast rate, with a day of just over 10 hours. Like Jupiter it has many moons, the most well known of these being Titan, Enceladus, Mimas and Phoebe.",
+        "image_source": "static/images/saturn.png",
+        "id": "saturn"
     },
     {
         "name": "Uranus",
-        "description": "Uranus takes 84 years to orbit the sun, but has a short day at only 17 hours. The atmosphere is hydrogen, helium and methane. Uranus rotates the opposite way to the other planets except for Venus. It has rings that appear vertical. While it doesn't have as many moons as Jupiter or Saturn, it still has 27 known moons. It has a very powerful magnetic field.",
-        "image_source": "static/images/uranus.jpg"
+        "diameter": "31,518 miles",
+        "distance_from_sun": "1.78 billion miles",
+        "orbit_duration": "84 earth years",
+        "type": "planet",
+        "moons": "27",
+        "description": "Uranus has a short day at only 17 hours. The atmosphere is hydrogen, helium and methane and it has a very powerful magnetic field. Uranus rotates the opposite way to the other planets except for Venus. It has rings that appear vertical. Its moons include Titania, Miranda, Oberon, Umbriel and Ariel.",
+        "image_source": "static/images/uranus.png",
+        "id": "uranus"
     },
     {
         "name": "Neptune",
+        "diameter": "30,599 miles",
+        "distance_from_sun": "2.77 billion miles",
+        "orbit_duration": "165 earth years",
+        "type": "planet",
+        "moons": "13",
         "description": "Neptune, which is a gas giant, is the furthest of the planets from the sun. It takes Neptune 16 hours to rotate and 165 earth years to orbit the sun. Like Uranus, it has an atmosphere that is comprised of hydrogen, helium and methane. With winds of up to 1,200mph, it has the fastest winds in the solar system. Neptune has fewer moons than the other gas giants at 13.",
-        "image_source": "static/images/neptune.jpg"
+        "image_source": "static/images/neptune.png",
+        "id": "neptune"
     },
     {
         "name": "Kuiper Belt",
+        "width": "50AU",
+        "largest_object": "Pluto",
+        "orbit_duration": "248 earth years",
+        "type": "kuiper belt",
         "description": "The Kuiper Belt is a region of space beyond Neptune that has many small icy bodies. There are possibly more than a trillion comets. There are also possibly hundreds of thousands that have a radius of more than 20 miles. The largest object in the Kuiper Belt is Pluto which takes 248 years to orbit the sun. It was downgraded from a planet to a dwarf planet. Pluto has five moons, the names of which are Charon, Hydra, Nix, Styx and Kerberos. Other major, known objects in the Kuiper Belt are Sedna, Haumea, Makemake and Eris.",
-        "image_source": "static/images/pluto.jpg"
+        "image_source": "static/images/pluto.png",
+        "id": "kuiper-belt"
     },
     {
         "name": "Comets",
-        "description": "Comets are small icy bodies that orbit the sun. There orbital timeframes vary greatly, between 200 years for some and 30 million years for others.. It is thought that there could be many millions of them, although only 3,535 are currently known of. Among the famous comets are Hartley, Swift-Tuttle, Borrelly and Halley's. Humans have been able to send spacecraft very close to comets. In 2001, Deep Space 1 passed Borrelly photographed its nucleus. Many comets are thought to originate in the Oort Cloud.",
-        "image_source": "static/images/comet.jpg"
+        "diameter": "various",
+        "type": "comet",
+        "description": "Comets are small icy bodies that orbit the sun. Their orbital timeframes vary greatly, between 200 years for some and 30 million years for others. It is thought that there could be many millions of them, although only 3,535 are currently known of. Among the famous comets are Hartley, Swift-Tuttle, Borrelly and Halley's. Humans have been able to send spacecraft very close to comets. In 2001, Deep Space 1 passed Borrelly photographed its nucleus. Many comets are thought to originate in the Oort Cloud.",
+        "image_source": "static/images/comet.png",
+        "id": "comets"
     }, 
     {
         "name": "Oort Cloud",
+        "distance_from_sun": "2,000AU - 200,000AU",
+        "type": "icy objects",
         "description": "Beyond the Kuiper Belt is the Oort Cloud. The Oort Cloud is cloud is a collection of trillions of icy bodies that surround the sun in a spherical orbit, differently to the other bodies which orbit eliptically. The Oort Cloud is extremely wide, stretching from 1,000 astronomical units (the outer edge of the Kuiper Belt) to 100,000 astonomical unit. The outer edge of the Oort Cloud is where the suns influence stops, and the solar system ends.",
-        "image_source": "static/images/oort-cloud.jpg"
+        "image_source": "static/images/oort-cloud.png",
+        "id": "oort-cloud"
     }   
 ]

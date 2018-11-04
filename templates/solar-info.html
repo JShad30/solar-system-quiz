@@ -2,10 +2,11 @@
 {% block content %}
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
-    <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio at asperiores animi cupiditate ullam maxime, pariatur deleniti labore temporibus obcaecati numquam fugiat illo aperiam in deserunt placeat, possimus nihil voluptas aut consectetur provident atque quos! Vel ipsa debitis temporibus voluptatum.</p>
+    <p class="intro-text">This page contains all the answers you would need to take the quiz. Find out all you need to know about the solar system... and a bit beyond. You will find information about the orbits of the planets, their moons and their composition. Where you see the word AU(Astronomical Unit), it represents the distance between the Sun and Earth. For example, if you see 100AU, this means 100 times the distance of the Sun to the Earth.</p>
 </div>
   
 {% for solar_body in solar_bodies_data %}
+
 <div class="solar-body-section">
     <div class="solar-body-overview">
         <h3>{{ solar_body.name }}</h3>
@@ -15,11 +16,48 @@
             <img src="{{ solar_body.image_source }}" alt="picture of {{ solar_body.name }}" width="100%" />
         </div>
         <div class="solar-body-overview solar-section">
-            <button id="more-info" class="solar-system-button"><h4 class="solar-system-link">More Info</h4></button>
-            <p>{{ solar_body.description }}</p>
+{% if solar_body.type.lower() == "planet" %}
+            <p class="list">Type: {{ solar_body.type }}<p>
+            <p class="list">Distance from Sun: {{ solar_body.distance_from_sun }}<p>
+            <p class="list">Orbit Duration: {{ solar_body.orbit_duration }}<p>
+            <p class="list">Diameter: {{ solar_body.diameter }}<p>
+            <p class="list">Moons: {{ solar_body.moons }}<p>
+                
+{% elif solar_body.type.lower() == "galaxy" %}
+            <p class="list">Type: {{ solar_body.type }}<p>
+            <p class="list">Number of stars: {{ solar_body.number_of_stars }}<p>
+                
+{% elif solar_body.type.lower() == "star" %}
+            <p class="list">Type: {{ solar_body.type }}<p>
+            <p class="list">Diameter: {{ solar_body.diameter }}<p>
+            <p class="list">Temperature: {{ solar_body.temperature }}</p>
+            
+{% elif solar_body.type.lower() == "kuiper belt" %}
+            <p class="list">Type: {{ solar_body.type }}<p>
+            <p class="list">Largest Object: {{ solar_body.largest_object }}<p>
+            <p class="list">Orbit Duration: {{ solar_body.orbit_duration }}<p>
+            <p class="list">Width: {{ solar_body.width }}<p>
+                
+{% elif solar_body.type.lower() == "asteroids" %}
+            <p class="list">Type: {{ solar_body.type }}<p>
+            <p class="list">Largest Object: {{ solar_body.largest_object }}<p>
+            <p class="list">Width: {{ solar_body.width }}<p>
+            
+{% elif solar_body.type.lower() == "comet" %}
+            <p class="list">Type: {{ solar_body.type }}<p>
+            <p class="list">Diameter: {{ solar_body.diameter }}<p>
+            
+{% else %}
+            <p class="list">What is it?: {{ solar_body.type }}</p>
+            <p class="list">Distance from sun: {{ solar_body.distance_from_sun }}<p>
+            
+{% endif %}
+            <button id="{{ solar_body.id }}" class="solar-system-button"><h4 class="solar-system-link">More Info</h4></button>
+            <p class="description {{ solar_body.id }}">{{ solar_body.description }}</p>
         </div>
     </div>
 </div>
+
 {% endfor %}
 
 {% endblock %}

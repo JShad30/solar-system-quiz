@@ -138,7 +138,8 @@
 /*Solar System Info Page*/
 
 .solar-body-section {
-    margin: 50px 0;
+    margin-top: 50px;
+    margin-bottom: 150px;
 }
 
 .solar-body {
@@ -171,17 +172,25 @@
     margin: 20px 0;
 }
 
-.solar-body-overview p {
+.list {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.solar-body-overview .description {
+    display: none;
     font-size: 1.2em;
 }
 
-.solar-body-overview button {
-    margin: 15px 0;
-    border: none;
-    outline: none;
+.solar-body-overview .milky-way.active {
+    display: flex;
 }
 
-.solar-body-overview button h4 {
+/*.solar-body-overview .description.active {
+    display: flex;
+}*/
+
+.solar-body-overview button {
     width: 100%;
     background-color: #333;
     height: 65px;
@@ -193,9 +202,12 @@
     align-items: center;
     transition-duration: 0.3;
     transition-timing-function: ease-in-out;
+    margin: 15px 0;
+    border: none;
+    outline: none;
 }
 
-.solar-body-overview button h4:hover {
+.solar-body-overview button:hover {
     transition-property: background-color;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;

@@ -138,8 +138,7 @@
 /*Solar System Info Page*/
 
 .solar-body-section {
-    margin-top: 50px;
-    margin-bottom: 150px;
+    margin: 30px 0 60px 0;
 }
 
 .solar-body {
@@ -164,6 +163,7 @@
 }
 
 .solar-body-overview {
+    width: 100%;
     color: #fff;
 }
 
@@ -177,12 +177,38 @@
     margin-bottom: 10px;
 }
 
-.solar-body-overview .description {
+.solar-body-overview .milky-way,
+.solar-body-overview .sun, 
+.solar-body-overview .mercury, 
+.solar-body-overview .venus,
+.solar-body-overview .earth,
+.solar-body-overview .mars,
+.solar-body-overview .asteroid-belt,
+.solar-body-overview .jupiter,
+.solar-body-overview .saturn,
+.solar-body-overview .uranus,
+.solar-body-overview .neptune,
+.solar-body-overview .kuiper-belt,
+.solar-body-overview .comets,
+.solar-body-overview .oort-cloud {
     display: none;
     font-size: 1.2em;
 }
 
-.solar-body-overview .milky-way.active {
+.solar-body-overview .milky-way.active,
+.solar-body-overview .sun.active , 
+.solar-body-overview .mercury.active, 
+.solar-body-overview .venus.active,
+.solar-body-overview .earth.active,
+.solar-body-overview .mars.active,
+.solar-body-overview .asteroid-belt.active,
+.solar-body-overview .jupiter.active,
+.solar-body-overview .saturn.active,
+.solar-body-overview .uranus.active,
+.solar-body-overview .neptune.active,
+.solar-body-overview .kuiper-belt.active,
+.solar-body-overview .comets.active,
+.solar-body-overview .oort-cloud.active {
     display: flex;
 }
 
@@ -200,7 +226,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition-duration: 0.3;
+    transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
     margin: 15px 0;
     border: none;
@@ -282,7 +308,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
     
     .solar-section {

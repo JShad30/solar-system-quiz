@@ -12,9 +12,6 @@
         <h3>{{ solar_body.name }}</h3>
     </div>
     <div class="solar-body">
-        <div class="solar-body-image solar-section">
-            <img src="{{ solar_body.image_source }}" alt="picture of {{ solar_body.name }}" width="100%" />
-        </div>
         <div class="solar-body-overview solar-section">
 {% if solar_body.type.lower() == "planet" %}
             <p class="list">Type: {{ solar_body.type }}<p>
@@ -41,7 +38,7 @@
 {% elif solar_body.type.lower() == "asteroids" %}
             <p class="list">Type: {{ solar_body.type }}<p>
             <p class="list">Largest Object: {{ solar_body.largest_object }}<p>
-            <p class="list">Width: {{ solar_body.width }}<p>
+            <p class="list">Width of Belt: {{ solar_body.width }}<p>
             
 {% elif solar_body.type.lower() == "comet" %}
             <p class="list">Type: {{ solar_body.type }}<p>
@@ -54,6 +51,9 @@
 {% endif %}
             <button id="{{ solar_body.id }}" class="solar-system-button"><h4 class="solar-system-link">More Info</h4></button>
             <p class="description {{ solar_body.id }}">{{ solar_body.description }}</p>
+        </div>
+        <div class="solar-body-image solar-section">
+            <img src="{{ solar_body.image_source }}" alt="picture of {{ solar_body.name }}" width="100%" />
         </div>
     </div>
 </div>

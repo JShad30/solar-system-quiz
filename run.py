@@ -13,11 +13,11 @@ def solar_info():
     data = []
     with open("data/solar-bodies-info.json", "r") as json_data:
         data = json.load(json_data)
-    return render_template("solar-info.html", page_heading="Solar System", solar_bodies_data=data)
+    return render_template("solar-info.html", page_heading="Solar System Info", solar_bodies_data=data)
     
 @app.route("/solar-quiz")
 def solar_quiz():
-    return render_template("solar-quiz.html", page_heading="Solar Quiz")
+    return render_template("solar-quiz.html", page_heading="Solar System Quiz")
     
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

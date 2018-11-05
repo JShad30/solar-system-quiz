@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Solar System Quiz</h1>
+<div class="intro-text">
+    <h2>{{ page_heading }}</h2>
+    <p class="intro-text">Now you've been through the info, and know what you need to, it's time to take the quiz! Answer the questions and submit your answers as you go. Enter your name and begin! At the end be sure to see where you rank.</p>
+    <input class="name-input-field" type="text" id="first-name" name="first-name" placeholder="Type First Name"/>
+    <input class="name-input-field" type="text" id="last-name" name="last-name" placeholder="Type Last Name"/>
+    <div class="solar-body-overview solar-section">
+        <button id="begin-quiz" class="solar-system-button"><h4 class="solar-system-link">Begin Quiz</h4></button>
+    </div>
+</div>
 {% endblock %}

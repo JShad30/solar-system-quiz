@@ -212,10 +212,6 @@
     display: flex;
 }
 
-/*.solar-body-overview .description.active {
-    display: flex;
-}*/
-
 .solar-body-overview button {
     width: 100%;
     background-color: #333;
@@ -241,7 +237,33 @@
     cursor: pointer;
 }
 
+.quiz-section-info-page {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
 /*Quiz Page*/
+
+.name-input-section {
+    margin: 10px 0;
+}
+
+.name-input-label {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.name-input-field {
+    box-sizing: border-box;
+    width: 100%;
+    height: 45px;
+    background-color: #000;
+    font-size: 20px;
+    color: #fff;
+    margin: 10px 0;
+    border: 1px solid #333;
+    padding: 10px;
+}
 
 /*Footer area*/
 
@@ -318,6 +340,16 @@
         justify-content: flex-start;
     }
     
+    .solar-system-link-info-page {
+        max-width: 45%;
+    }
+    
+    /*Quiz page*/
+    
+    .name-input-field {
+        width: 45%;
+    }
+    
 }
 
 @media(min-width: 992px) {
@@ -329,9 +361,4 @@
     
 }
 
-@media(min-width: 1224px) {
-    
-
-    
-}
 

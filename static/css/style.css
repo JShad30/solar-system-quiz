@@ -248,6 +248,11 @@
     margin: 10px 0;
 }
 
+.input-boxes {
+    display: flex;
+    flex-direction: column;
+}
+
 .name-input-label {
     margin-bottom: 20px;
     font-size: 1.3em;
@@ -263,6 +268,62 @@
     margin: 10px 0;
     border: 1px solid #333;
     padding: 10px;
+}
+
+#quiz-intro {
+    display: block;
+}
+
+#quiz-intro.not-active {
+    display: none;
+}
+
+/*Question loop*/
+
+#question-1,
+#question-2,
+#question-3,
+#question-4,
+#question-5,
+#question-6,
+#question-7,
+#question-8,
+#question-9,
+#question-10,
+#question-11,
+#question-12,
+#question-13,
+#question-14,
+#question-15,
+#question-16,
+#question-17,
+#question-18,
+#question-19,
+#question-20 {
+    display: none;
+}
+
+#question-1.active,
+#question-2.active,
+#question-3.active,
+#question-4.active,
+#question-5.active,
+#question-6.active,
+#question-7.active,
+#question-8.active,
+#question-9.active,
+#question-10.active,
+#question-11.active,
+#question-12.active,
+#question-13.active,
+#question-14.active,
+#question-15.active,
+#question-16.active,
+#question-17.active,
+#question-18.active,
+#question-19.active,
+#question-20.active {
+    display: block;
 }
 
 /*Footer area*/

@@ -136,7 +136,7 @@
         "name": "Oort Cloud",
         "distance_from_sun": "2,000AU - 200,000AU",
         "type": "icy objects",
-        "description": "Beyond the Kuiper Belt is the Oort Cloud. The Oort Cloud is cloud is a collection of trillions of icy bodies that surround the sun in a spherical orbit, differently to the other bodies which orbit eliptically. The Oort Cloud is extremely wide, stretching from 1,000 astronomical units (the outer edge of the Kuiper Belt) to 100,000 astonomical unit. The outer edge of the Oort Cloud is where the suns influence stops, and the solar system ends.",
+        "description": "Beyond the Kuiper Belt is the Oort Cloud. The Oort Cloud is cloud is a collection of trillions of icy bodies that surround the sun in a spherical orbit, differently to the other bodies which orbit eliptically. The Oort Cloud is extremely wide, and the outer edge of the Oort Cloud is where the suns influence stops, and the solar system ends.",
         "image_source": "static/images/oort-cloud.png",
         "id": "oort-cloud"
     }   

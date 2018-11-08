@@ -1,4 +1,5 @@
 from flask import Flask, redirect, render_template, request
+import json
 
 question_one = "1. Which planet is nearest to the sun?\na. Venus\nb. Mercury\nc. Pluto\nType the letter of your answer"
 question_two = "2. What is the largest planet in the solar system?\na. Jupiter\nb. Uranus\nc. Saturn\nType the letter of your answer"
@@ -22,170 +23,6 @@ question_nineteen = "19. Makemake is part of the asteroid belt. True or false?\n
 question_twenty = "20. Which of these is a comet?\na. Halley's\nb. Eris\nc. Callisto\nType the letter of your answer"
 
 """
-
-questions = [
-    {
-        "question": "Which planet is nearest to the sun?",
-        "answers": 
-            ["a. Venus",
-            "b. Mercury",
-            "c. Pluto"],
-        "correct_answer": "b"
-    },
-    {
-        "question": "What is the largest planet in the solar system?",
-        "answers": 
-            ["a. Jupiter",
-            "b. Uranus",
-            "c. Saturn"],
-        "correct_answer": "a"
-    },
-    {
-        "question": "Between which two planets do you find the asteroid belt?",
-        "answers": 
-            ["a. Earth and Mars",
-            "b. Mars and Jupiter",
-            "c. Jupiter and Saturn"],
-        "correct_answer": "b"
-    },
-    {
-        "question": "What is the name of the largest object in the asterid belt?",
-        "answers": 
-            ["a. Ceres",
-            "b. Juno",
-            "c. Hygiea"],
-        "correct_answer": "a"
-    },
-    {
-        "question": "Now pluto has been downgraded as a planet, which planet is the furthest from the sun?",
-        "answers": 
-            ["a. Uranus",
-            "b. Neptune",
-            "c. Venus"],
-        "correct_answer": "b"
-    },
-    {
-        "question": "How many planets are there?",
-        "answers": 
-            ["a. Eight",
-            "b. Six",
-            "c. Seven"],
-        "correct_answer": "a"
-    },
-    {
-        "question": "How many of these are gas giants?",
-        "answers": 
-            ["a. Five",
-            "b. Three",
-            "c. Four"],
-        "correct_answer": "c"
-    },
-    {
-        "question": "Umbriel is a moon of which planet?",
-        "answers": 
-            ["a. Saturn",
-            "b. Neptune",
-            "c. Uranus"],
-        "correct_answer": "c"
-    },
-    {
-        "question": "How many moons orbit Mars?",
-        "answers": 
-            ["a. One",
-            "b. Two",
-            "c. Three"],
-        "correct_answer": "b"
-    },
-    {
-        "question": "Which of these is a moon of Mars?",
-        "answers": 
-            ["a. Makemake",
-            "b. Europa",
-            "c. Phobos"],
-        "correct_answer": "c"
-    },
-    {
-        "question": "Pluto is the largest object in which part of the solar system?",
-        "answers": 
-            ["a. Kuiper Belt",
-            "b. Inner Planets",
-            "c. Oort Cloud"],
-        "correct_answer": "a"
-    },
-    {
-        "question": "Which of these is not one of Plutos moons?",
-        "answers": 
-            ["a. Hydra",
-            "b. Io",
-            "c. Nix"],
-        "correct_answer": "b"
-    },
-    {
-        "question": "Which planet is famous for its large rings?",
-        "answers": 
-            ["a. Venus",
-            "b. Neptune",
-            "c. Saturn"],
-        "correct_answer": "c"
-    },
-    {
-        "question": "Which of the planets is thought to have the warmest climate?",
-        "answers": 
-            ["a. Mars",
-            "b. Venus",
-            "c. Mercury"],
-        "correct_answer": "b"
-    },
-    {
-        "question": "After the sun, which is the nearest star to the solar system at four light years?",
-        "answers": 
-            ["a. Proxima Centauri",
-            "b. Bernards Star",
-            "c. Centauri A"],
-        "correct_answer": "a"
-    },
-    {
-        "question": "The solar system is part of which galaxy?",
-        "answers": 
-            ["a. The Sombrero Galaxy",
-            "b. Andromeda",
-            "c. Milky Way"],
-        "correct_answer": "c"
-    },
-    {
-        "question": "Approximately how old is the solar system thought to be?",
-        "answers": 
-            ["a. 6 Billion Years",
-            "b. 4.5 Billion Years",
-            "c. 3 Billion Years"],
-        "correct_answer": "b"
-    },
-    {
-        "question": "When the moon passes across the sun and blocks the daylight, this is called a solar...",
-        "answers": 
-            ["a. Eclipse",
-            "b. Storm",
-            "c. Flair"],
-        "correct_answer": "a"
-    },
-    {
-        "question": "Makemake is part of the asteroid belt. True or false?",
-        "answers": 
-            ["a. True",
-            "b. False",
-            "c. There is no such object?"],
-        "correct_answer": "b"
-    },
-    {
-        "question": "Which of these is a comet?",
-        "answers":  
-            ["a. Halley's",
-            "b. Eris",
-            "c. Callisto"],
-        "correct_answer": "a"
-    }
-]
-
 score = 0
 
 for ask_question in questions:
@@ -197,6 +34,7 @@ for ask_question in questions:
     if answer.lower().strip() == questions["correct_answer"]:
         score += 1
 """
+
 
 def solar_system_quiz():
     
@@ -387,6 +225,61 @@ def write_score_to_file():
     with open("assets/data/results.txt", "a+") as chat_messages:
         message = chat_messages.readlines()
     return message
- 
+"""
+
+json.load("data/questions.json")
+json_file = open("")
+
+def solar_system_quiz():
+    
+    score = 0
+  
+    #Question one
+    print(question_one)
+    question_one_answer = input()
+    if question_one_answer.lower() == "mercury":
+        score += 1
+        
+    #Question two  
+    print(question_two)
+    question_two_answer = input()
+    if question_two_answer.lower() == "jupiter":
+        score += 1
+
+    first_name = input("First Name: ")
+    last_name = input("Last Name: ")
+    
+    if score == 2:
+        print("Thanks for playing {}. You scored {}. That is a perfect score. Very well done!".format(first_name, score))
+    else:
+        print("Terrible score {}. You should try again.".format(first_name))
+
+
+
+"""
+def count_score():
+    score = 0
+    print("Ask Question")
+    question_answer = input("Type answer")
+    if question_answer.lower() == "correct":
+        score += 1
+    elif question_answer.lower() == "":
+        print("Invalid Answer")
+    else:
+        score += 0
+"""
+
+"""
+def solar_system_quiz():
+    #Question one
+    print(question_one)
+    question_answer = input("Type your answer: ")
+    if question_answer.lower() == "mercury":
+        
+    elif question_answer.lower() == "":
+        print("Invalid input... try again")
+"""
+
+
 if __name__ == '__main__':
     solar_system_quiz()

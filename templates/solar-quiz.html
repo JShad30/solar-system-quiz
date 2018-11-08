@@ -12,19 +12,4 @@
     </form>
 </div>
 
-{% for question in question_list %}
-
-<div id="question-{{ question.question_number }}" class="intro-text">
-    <h2>Question {{ question.question_number }}</h2>
-    <p class="intro-text">{{ question.question_ask }}</p>
-    <form method="POST" class="input-boxes">
-        <input class="name-input-field" type="text" id="question-{{ question.question_number }}" name="answer" placeholder="Type Answer" required/>
-        <div class="solar-body-overview solar-section">
-            <button id="question-{{ question.question_number }}-next-question" class="solar-system-button"><h4 class="solar-system-link">Next</h4></button>
-        </div>
-    </form>
-</div>
-
-{% endfor %}
-
 {% endblock %}

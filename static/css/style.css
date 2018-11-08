@@ -270,6 +270,8 @@
     padding: 10px;
 }
 
+
+/*
 #quiz-intro {
     display: block;
 }
@@ -277,9 +279,9 @@
 #quiz-intro.not-active {
     display: none;
 }
-
+*/
 /*Question loop*/
-
+/*
 #question-1,
 #question-2,
 #question-3,
@@ -325,7 +327,7 @@
 #question-20.active {
     display: block;
 }
-
+*/
 /*Footer area*/
 
 /*Social media links*/

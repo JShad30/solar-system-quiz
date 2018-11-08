@@ -1,8 +1,11 @@
 import unittest
 from quiz import *
 
-assert question_one_answer("b") == "answer ok and correct"
-assert question_one_answer("B") == "answer ok and correct"
-assert question_one_answer("c") == "answer ok but incorrect"
+
+"""Assertions for the score count"""
+assert question_answer("correct") == 1, "Score now 1 as expected"
+assert question_answer("Correct") == 1, "Score now 1 as expected"
+assert question_answer("incorrect") == 0, "Score 0 as expected"
+assert question_answer("") == 0, "Invalid answer"
 
 print("All tests passed")

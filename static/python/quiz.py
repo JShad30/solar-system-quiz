@@ -15,7 +15,7 @@ question_eleven = "11. Pluto is the largest object in which part of the solar sy
 question_twelve = "12. Which of these is not one of Plutos moons?\na. Hydra\nb. Io\nc. Nix\nType the letter of your answer"
 question_thirteen = "13. Which planet is famous for its large rings?\na. Venus\nb. Neptune\nc. Saturn\nType the letter of your answer"
 question_fourteen = "14. Which of the planets is thought to have the warmest climate?\na. Mars\nb. Venus\nc. Mercury\nType the letter of your answer"
-question_fifteen = "15. After the sun, which is the nearest star to the solar system at four light years?\na. Proxima Centauri\nb. Barnards Star\nc. Centauri A\nType the letter of your answer"
+question_fifteen = "15. After the sun, which is the nearest star to the solar system at four light years?\na. Proxima Centauri\nb. Barnards Star\nc. VY Canis Majoris\nType the letter of your answer"
 question_sixteen = "16. The solar system is a part of which galaxy?\na. The Sombrero Galaxy\nb. Andromeda\nc. Milky Way\nType the letter of your answer"
 question_seventeen = "17. Approximately how old is the solar system thought to be?\na. 6 Billion Years\nb. 4.5 Billion Years\nc. 3 Billion Years\nType the letter of your answer"
 question_eighteen = "18. When the moon passes across the sun and blocks the daylight, this is called a solar...\na. Eclipse\nb. Storm\nc. Flair\nType the letter of your answer"
@@ -40,6 +40,17 @@ def solar_system_quiz():
     
     score = 0
   
+    data = []
+    
+    with open("data/questions.json", "r") as json_data:
+        data = json.load(json_data)
+    q = data[0]["question"]
+    c = data[0]["choices"]
+    for question in question_list:
+        return question, choices
+        
+    
+    """
     #Question one
     print(question_one)
     question_one_answer = input()

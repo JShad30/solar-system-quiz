@@ -35,16 +35,17 @@ def get_question(id):
     return str(id)"""
     
     
-@app.route("/question/<int:q>")
-def get_question(q):
+@app.route("/question/<int:id>") 
+def get_question(id):
     data = []
     with open("data/questions.json", "r") as json_data:
         data = json.load(json_data)
-    q = data[1]["question"]
-    a = data[1]["choices"]
-        
-    return q + " " + a[0] + " " + a[1] + " " + a[2]
+    q = data[id - 1]["question"]
+    c = data[id - 1]["choices"]
     
+    return render_template("questions.html", question=data[id - 1])
+        
+    """return q + " " + c[0] + " " + c[1] + " " + c[2]"""
 
 
     

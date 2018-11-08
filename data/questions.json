@@ -12,9 +12,9 @@
         "id": "2",
         "question": "What is the largest planet in the solar system?",
         "choices": [
-            "Jupiter",
+            "Saturn",
             "Uranus",
-            "Saturn"],
+            "Jupiter"],
         "answer": "Jupiter"
     },
     {
@@ -75,108 +75,108 @@
         "id": "9",
         "question": "How many moons orbit Mars?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "One",
+            "Two",
+            "Three"],
+        "answer": "Two"
     },
     {
         "id": "10",
-        "question": "Mars has two moons, Deimos and ...?",
+        "question": "Which of these is a moon of Mars?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "Makemake",
+            "Europa",
+            "Phobos"],
+        "answer": "Phobos"
     },
     {
         "id": "11",
         "question": "Pluto is the largest object in which part of the solar system?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "Kuiper Belt",
+            "Inner Planets",
+            "Oort Cloud"],
+        "answer": "Kuiper Belt"
     },
     {
         "id": "12",
-        "question": "Name one of the moons of Pluto?",
+        "question": "Which of these is not one of Pluto's moons?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "Hydra",
+            "Io",
+            "Nix"],
+        "answer": "Io"
     },
     {
         "id": "13",
         "question": "Which planet is famous for its large rings?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "Venus",
+            "Neptune",
+            "Saturn"],
+        "answer": "Saturn"
     },
     {
         "id": "14",
         "question": "Which of the planets is thought to have the warmest climate?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "Mars",
+            "Venus",
+            "Mercury"],
+        "answer": "Venus"
     },
     {
         "id": "15",
         "question": "After the sun, which is the nearest star to the solar system at four light years?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "Proxima Centauri",
+            "Bernards Star",
+            "VY Canis Majoris"],
+        "answer": "Proxima Centauri"
     },
     {
         "id": "16",
         "question": "The solar system is a part of which galaxy?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "The Sombrero Galaxy",
+            "Andromeda",
+            "Milky Way"],
+        "answer": "Milky Way"
     },
     {
         "id": "17",
         "question": "Approximately how old is the solar system thought to be?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "6 Billion Years",
+            "4.5 Billion Years",
+            "3 Billion Years"],
+        "answer": "4.5 Billion Years"
     },
     {
         "id": "18",
         "question": "When the moon passes across the sun and blocks the daylight, this is called a solar...",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "Eclipse",
+            "Storm",
+            "Flair"],
+        "answer": "Eclipse"
     },
     {
         "id": "19",
         "question": "Makemake is part of the asteroid belt. Type true or false?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "True",
+            "False",
+            "There is no such object"],
+        "answer": "False"
     },
     {
         "id": "20",
         "question": "Name a famous comet from our solar system?",
         "choices": [
-            "Mercury",
-            "Pluto",
-            "Venus"],
-        "answer": "mercury"
+            "Halley's",
+            "Eris",
+            "Callisto"],
+        "answer": "Halley's"
     }
 ]

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+ 
+<div class="intro-text">
+    <h2> Question {{ question.id }}</h2>
+    <p class="intro-text">{{ question.question }}</p>
+</div>
+
+<div class="solar-body-overview solar-section">
+    <form method="POST" class="input-boxes">
+        <div class="radio-button">
+            <input type="radio" id="{{ question.choices[0] }}" name="{{ question.question }}" value="{{ question.choices[0] }}"/><label for="">{{ question.choices[0] }}</label>
+        </div>
+        <div class="radio-button">
+            <input type="radio" id="{{ question.choices[1] }}" name="{{ question.question }}" value="{{ question.choices[1] }}"/><label for="">{{ question.choices[1] }}</label>
+        </div>
+        <div class="radio-button">
+            <input type="radio" id="{{ question.choices[2] }}" name="{{ question.question }}" value="{{ question.choices[2] }}"/><label for="">{{ question.choices[2] }}</label>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

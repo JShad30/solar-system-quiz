@@ -1,15 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<div id="quiz-intro" class="intro-text">
+<div class="intro-text">
     <h2>{{ page_heading }}</h2>
     <p class="intro-text">Now you've been through the info, and know what you need to, it's time to take the quiz! Answer the questions and submit your answers as you go. Enter your name and begin! At the end be sure to see how your score compares.</p>
-    <form method="POST" class="input-boxes" id="">
+    <form method="POST" class="input-boxes">
         <input class="name-input-field" type="text" id="firstname" name="firstname" placeholder="Type First Name" required/>
         <input class="name-input-field" type="text" id="lastname" name="lastname" placeholder="Type Last Name" required/>
         <div class="solar-body-overview solar-section">
-            <button id="begin-quiz" class="solar-system-button"><h4 class="solar-system-link">Next</a></h4></button>
+            <button id="begin-quiz" class="solar-system-button"><h4 class="solar-system-link">Next</h4></button>
         </div>
     </form>
 </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+        <div class="intro-text">
+            <h2>Thanks for playing</h2>
+            <p>{{ message }}</p>
+            <h4 class="solar-system-link" id="name-submit-button"><a href="{{ url_for('leaderboard') }}">Leaderboard</a></h4>
+        </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
 
 {% endblock %}

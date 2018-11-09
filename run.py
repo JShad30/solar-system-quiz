@@ -16,8 +16,13 @@ def solar_info():
         data = json.load(json_data)
     return render_template("solar-info.html", page_heading="Solar System Info", solar_bodies_data=data)
 
-@app.route("/solar-quiz")
+@app.route("/solar-quiz", methods=["GET", "POST"])
 def solar_quiz():
+    if request.method == "POST":
+        print(request.form)
+    
+    
+    
     data = []
     with open("data/questions.json", "r") as json_data:
         data = json.load(json_data)
@@ -38,14 +43,13 @@ def get_question(id):
 @app.route("/question/<int:id>") 
 def get_question(id):
     data = []
+    
     with open("data/questions.json", "r") as json_data:
         data = json.load(json_data)
     q = data[id - 1]["question"]
     c = data[id - 1]["choices"]
     
     return render_template("questions.html", question=data[id - 1])
-        
-    """return q + " " + c[0] + " " + c[1] + " " + c[2]"""
 
 
     

@@ -1,22 +1,24 @@
 from flask import Flask, redirect, render_template, request
 import json
 
+score = 0
 
-    
-    score = 0
-  
+def get_question(id):
     data = []
-    
     with open("data/questions.json", "r") as json_data:
         data = json.load(json_data)
-    q = data[0]["question"]
-    c = data[0]["choices"]
-    question_list=data
-    
-    for question in question_list:
-        return question
-        
-    def solar_system_quiz():    
-        
+    q = data[id]["question"]
+    c = data[id]["choices"]
+
+    for single_question in data:
+        print(q.question)
+        print(c.choices[0])
+        print(c.choices[1])
+        print(c.choices[2])
+        answer_given = input("Type your answer: ")
+        def calc_score():
+            if answer_given.lower() == single_question.answer:
+                score += 1
+
 if __name__ == '__main__':
-    solar_system_quiz()
+    get_question(id)

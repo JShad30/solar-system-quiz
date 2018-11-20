@@ -1,9 +1,6 @@
 import unittest
-from quiz2 import *
+import quiz2
 
-"""Assertions that question answers are being read correctly"""
-assert answer_given.lower() == a_str.lower(), "Correct"
-assert answer_given.lower() == "", "No answer given"
-assert answer_given.lower() != a_str.lower(), "Wrong!"
-
-print("All tests passed")
+class TestQuiz(unittest.TestCase):
+    def test_area(self):
+        

@@ -31,6 +31,7 @@ def solar_quiz():
     return render_template("solar-quiz.html", page_heading="Solar System Quiz")
 
 
+
 """The following functions take care of the printing of names and scores from the form to the text files and then printing to the leaderboard"""
 def write_to_file(filename, data):
     """Handle the process of writing the data to the to files"""
@@ -46,6 +47,7 @@ def fetch_names_to_show():
     with open("data/names.txt", "r") as names:
         show_names = names.readlines()
     return show_names
+    
     
     
 """Post quiz leaderboard rendering"""

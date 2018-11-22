@@ -29,7 +29,18 @@ def solar_quiz():
         flash("Thanks for playing {}. You scored {{ score }}/20. See where you rank on the leaderboard.".format(request.form["firstname"]))
         print(request.form)
     return render_template("solar-quiz.html", page_heading="Solar System Quiz")
+    
 
+
+"""Iterating through the questions from the solar-bodies-info.json file"""    
+@app.route("/question/<int:id>") 
+def get_question(id):
+    data = []
+    with open("data/questions.json", "r") as json_data:
+        data = json.load(json_data)
+    q = data[id - 1]["question"]
+    c = data[id - 1]["choices"]
+    return render_template("questions.html", question=data[id - 1])
 
 
 """The following functions take care of the printing of names and scores from the form to the text files and then printing to the leaderboard"""
@@ -49,25 +60,12 @@ def fetch_names_to_show():
     return show_names
     
     
-    
 """Post quiz leaderboard rendering"""
 @app.route("/solar-quiz/leaderboard")
 def leaderboard():
     """Display the names from the text file"""
     show_names = fetch_names_to_show()
     return render_template("leaderboard.html", page_heading="Current Leaderboard", names=show_names)
-
-
-
-"""Iterating through the questions from the solar-bodies-info.json file"""    
-@app.route("/question/<int:id>") 
-def get_question(id):
-    data = []
-    with open("data/questions.json", "r") as json_data:
-        data = json.load(json_data)
-    q = data[id - 1]["question"]
-    c = data[id - 1]["choices"]
-    return render_template("questions.html", question=data[id - 1])
 
 
 

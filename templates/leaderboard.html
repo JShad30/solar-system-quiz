@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+    
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
     <p class="intro-text">Here's the leaderboard so see where you rank. If you are unhappy with the result, be sure to go to the Solar System Info page to brush up on your knowledge before retaking the quiz.</p>
     <div class="leaderboard">
         {% for name in show_names %}
-        <p>{{ name }}</p>
+        <p>{{ name }}{{ score }}</p>
         {% endfor %}
     </div>
 </div>

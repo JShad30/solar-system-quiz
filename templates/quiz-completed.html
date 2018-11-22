@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="intro-text">
+                    <h2>Thanks for playing</h2>
+                    <p>{{ message }}</p>
+                    <h4 class="solar-system-link" id="name-submit-button"><a href="{{ url_for('leaderboard') }}">Leaderboard</a></h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+{% endblock %}

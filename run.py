@@ -36,15 +36,16 @@ def solar_quiz():
 """Iterating through the questions from the solar-bodies-info.json file"""    
 @app.route("/solar-quiz/question/<int:id>") 
 def get_question(id):
-    data = []
+    questions = []
     with open("data/questions.json", "r") as json_data:
-        data = json.load(json_data)
-    q = data[id - 1]["question"]
-    c = data[id - 1]["choices"]
-    return render_template("questions.html", question=data[id - 1])
-    
+        questions = json.load(json_data)
+    q = questions[id - 1]["question"]
+    c = questions[id - 1]["choices"]
+    return render_template("questions.html", question=questions[id - 1])
 
 
+
+"""Once last question is completed print the quiz"""
 @app.route("/solar-quiz/quiz-completed")
 def quiz_completed():
     if request.method == "POST":

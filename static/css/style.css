@@ -270,6 +270,11 @@
     padding: 10px;
 }
 
+.solar-system-button h4 a {
+    text-decoration: none;
+    color: #fff;
+}
+
 /*Footer area*/
 
 /*Social media links*/

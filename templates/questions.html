@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
- 
+
 <div class="intro-text">
     <h2> Question {{ question.id }}</h2>
     <p class="intro-text">{{ question.question }}</p>
@@ -9,16 +9,16 @@
 <div class="solar-body-overview solar-section">
     <form method="POST" class="input-boxes">
         <div class="radio-button">
-            <input type="radio" id="{{ question.choices[0] }}" name="{{ question.question }}" value="{{ question.choices[0] }}"/><label for="">{{ question.choices[0] }}</label>
+            <label for=""><input type="radio" id="{{ question.choices[0] }}" name="{{ question.question }}" value="{{ question.choices[0] }}" required/>{{ question.choices[0] }}</label>
         </div>
         <div class="radio-button">
-            <input type="radio" id="{{ question.choices[1] }}" name="{{ question.question }}" value="{{ question.choices[1] }}"/><label for="">{{ question.choices[1] }}</label>
+            <label for=""><input type="radio" id="{{ question.choices[1] }}" name="{{ question.question }}" value="{{ question.choices[1] }}" required/>{{ question.choices[1] }}</label>
         </div>
         <div class="radio-button">
-            <input type="radio" id="{{ question.choices[2] }}" name="{{ question.question }}" value="{{ question.choices[2] }}"/><label for="">{{ question.choices[2] }}</label>
+            <label for=""><input type="radio" id="{{ question.choices[2] }}" name="{{ question.question }}" value="{{ question.choices[2] }}" required/>{{ question.choices[2] }}</label>
         </div>
         <div class="solar-body-overview solar-section">
-            <button id="begin-quiz" class="solar-system-button"><h4 class="solar-system-link">Next Question</h4></button>
+            <button id="begin-quiz" class="solar-system-button"><h4 class="solar-system-link"><a href="#">Next Question</a></h4></button>
         </div>
     </form>
 </div>

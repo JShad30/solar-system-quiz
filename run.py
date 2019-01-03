@@ -5,7 +5,13 @@ from flask import Flask, render_template, request, redirect, flash
 app = Flask(__name__)
 app.secret_key = "Some Secret"
 
+score = 0
 
+
+"""Calling the data from questions.json and putting it into a variable called questions"""
+questions = []
+with open("data/questions.json", "r") as json_data:
+    questions = json.load(json_data)
 
 """The following functions take care of the printing of names and scores from the form to the text files and then printing to the leaderboard"""
 def write_to_file(filename, data):
@@ -23,8 +29,19 @@ def fetch_names_to_show():
         show_names = names.readlines()
     return show_names
     
-def next_question():
-    """Moves the question page to the next question"""
+def print_question(score):
+    """Iterate round the questions printing the question and choices"""  
+    for question in questions:
+        print(question["question"])
+        print(question["choices"][0])
+        print(question["choices"][1])
+        print(question["choices"][2])
+        """Waiting for answerinput from user and checking whether this is the same as 'answer' in questions.json"""
+        answer_given = input(question["answer"])
+        if answer_given == question["answer"]:
+            """If the same add one to the score"""
+            score += 1
+        print(score)
     
 
 

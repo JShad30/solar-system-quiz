@@ -9,17 +9,15 @@
 <div class="solar-body-overview solar-section">
     <form method="POST" class="input-boxes">
         <div class="radio-button">
-            <label for=""><input type="radio" id="{{ question.choices[0] }}" name="{{ question.question }}" value="{{ question.choices[0] }}" required/>{{ question.choices[0] }}</label>
+            <label for=""><input class="radio-button-input" type="radio" id="{{ question.choices[0] }}" name="{{ question.question }}" value="{{ question.choices[0] }}" required/>{{ question.choices[0] }}</label>
         </div>
         <div class="radio-button">
-            <label for=""><input type="radio" id="{{ question.choices[1] }}" name="{{ question.question }}" value="{{ question.choices[1] }}" required/>{{ question.choices[1] }}</label>
+            <label for=""><input class="radio-button-input" type="radio" id="{{ question.choices[1] }}" name="{{ question.question }}" value="{{ question.choices[1] }}" required/>{{ question.choices[1] }}</label>
         </div>
         <div class="radio-button">
-            <label for=""><input type="radio" id="{{ question.choices[2] }}" name="{{ question.question }}" value="{{ question.choices[2] }}" required/>{{ question.choices[2] }}</label>
+            <label for=""><input class="radio-button-input" type="radio" id="{{ question.choices[2] }}" name="{{ question.question }}" value="{{ question.choices[2] }}" required/>{{ question.choices[2] }}</label>
         </div>
-        <div class="solar-body-overview solar-section">
-            <button id="begin-quiz" class="solar-system-button"><h4 class="solar-system-link"><a href="#">Next Question</a></h4></button>
-        </div>
+        <input type="submit" value="Next Question" id="begin-quiz" class="question-button" src="{{ url_for('get_question', id=1) }}">
     </form>
 </div>
 

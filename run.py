@@ -6,6 +6,28 @@ app = Flask(__name__)
 app.secret_key = "Some Secret"
 
 
+
+"""The following functions take care of the printing of names and scores from the form to the text files and then printing to the leaderboard"""
+def write_to_file(filename, data):
+    """Handle the process of writing the data to the to files"""
+    with open(filename, "a") as file:
+        file.writelines(data)
+
+def add_names():
+    write_to_file("data/names.txt", request.form["firstname"] + " " + request.form["lastname"] + "\n")
+    
+def fetch_names_to_show():
+    """Fetch all of the names from the text file"""
+    show_names = []
+    with open("data/names.txt", "r") as names:
+        show_names = names.readlines()
+    return show_names
+    
+def next_question():
+    """Moves the question page to the next question"""
+    
+
+
 """Rendering the home page"""
 @app.route("/")
 def index():
@@ -34,11 +56,13 @@ def solar_quiz():
 
 
 """Iterating through the questions from the solar-bodies-info.json file"""    
-@app.route("/solar-quiz/question/<int:id>") 
+@app.route("/solar-quiz/question/<int:id>")#How to put the button in this part of the file to iterate through the questions?
 def get_question(id):
+    # Set score variable here? score = 0
     questions = []
     with open("data/questions.json", "r") as json_data:
         questions = json.load(json_data)
+        # Loop here to iterate? for question in questions:
     q = questions[id - 1]["question"]
     c = questions[id - 1]["choices"]
     return render_template("questions.html", question=questions[id - 1])
@@ -46,30 +70,12 @@ def get_question(id):
 
 
 """Once last question is completed print the quiz"""
-@app.route("/solar-quiz/quiz-completed")
+@app.route("/solar-quiz/quiz-completed", methods=["POST"])
 def quiz_completed():
     if request.method == "POST":
         flash("Thanks for playing {}. You scored {{ score }}/20. See where you rank on the leaderboard.".format(request.form["firstname"]))
         print(request.form)
     return render_template("quiz-completed.html", page_heading="Solar System Quiz")
-    
-    
-
-"""The following functions take care of the printing of names and scores from the form to the text files and then printing to the leaderboard"""
-def write_to_file(filename, data):
-    """Handle the process of writing the data to the to files"""
-    with open(filename, "a") as file:
-        file.writelines(data)
-
-def add_names():
-    write_to_file("data/names.txt", request.form["firstname"] + " " + request.form["lastname"] + "\n")
-    
-def fetch_names_to_show():
-    """Fetch all of the names from the text file"""
-    show_names = []
-    with open("data/names.txt", "r") as names:
-        show_names = names.readlines()
-    return show_names
     
    
     

@@ -30,7 +30,7 @@
 .top-bar {
     height: 80px;
     background-color: transparent;
-    color: #fff;
+    color: #E8E8E8;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -44,7 +44,7 @@
 }
 
 .top-bar-content h1 a {
-    color: #fff;
+    color: #E8E8E8;
     text-decoration: none;
     font-size: 1.2em;
 }
@@ -64,7 +64,7 @@
 .intro-text {
     width: 100%;
     margin: 20px 0;
-    color: #fff;
+    color: #E8E8E8;
 }
 
 .intro-text h2 {
@@ -92,7 +92,7 @@
 }
 
 .text-overview {
-    color: #fff;
+    color: #E8E8E8;
 }
 
 .text-overview h3 {
@@ -123,7 +123,7 @@
 }
 
 .text-overview h4 a {
-    color: #fff;
+    color: #E8E8E8;
     text-decoration: none;
     font-size: 1.6em;
     width: inherit;
@@ -164,7 +164,7 @@
 
 .solar-body-overview {
     width: 100%;
-    color: #fff;
+    color: #E8E8E8;
 }
 
 .solar-body-overview h3 {
@@ -216,7 +216,7 @@
     width: 100%;
     background-color: #333;
     height: 65px;
-    color: #fff;
+    color: #E8E8E8;
     text-decoration: none;
     font-size: 1.6em;
     display: flex;
@@ -264,7 +264,7 @@
     height: 45px;
     background-color: #000;
     font-size: 20px;
-    color: #fff;
+    color: #E8E8E8;
     margin: 10px 0;
     border: 1px solid #333;
     padding: 10px;
@@ -272,7 +272,47 @@
 
 .solar-system-button h4 a {
     text-decoration: none;
-    color: #fff;
+    color: #E8E8E8;
+}
+
+/* Questions */ 
+
+.radio-button {
+    margin: 3px 0;
+    margin-left: 20px;
+}
+
+.radio-button label {
+    font-size: 1.2em;
+}
+
+.radio-button label input:hover {
+    cursor: pointer;
+}
+
+.radio-button-input {
+    margin-right: 20px;
+}
+
+.solar-body-overview .input-boxes .question-button {
+    height: 65px;
+    color: #E8E8E8;
+    background-color: #333;
+    border: 0;
+    width: 100%;
+    font-size: 1.6em;
+    margin: 15px 0;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    font-weight: bold;
+}
+
+.solar-body-overview .input-boxes .question-button:hover {
+    transition-property: background-color;
+    background-color: #000;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
 /*Footer area*/
@@ -305,14 +345,14 @@
 .social-links li a {
     text-decoration: none;
     font-size: 30px;
-    color: #fff;
+    color: #E8E8E8;
 }
 
 .social-links li a i {
     display: flex;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
-    color: #fff;
+    color: #E8E8E8;
 }
 
 .social-links li a i:hover {
@@ -344,10 +384,13 @@
     }
     
     .solar-section {
-        width: 45%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+    }
+    
+    .solar-body-overview button {
+        max-width: 45%;
     }
     
     .solar-system-link-info-page {
@@ -358,6 +401,22 @@
     
     .name-input-field {
         width: 45%;
+    }
+    
+    /* Questions pages */
+    
+    .solar-body-overview .input-boxes .question-button {
+        height: 65px;
+        color: #E8E8E8;
+        background-color: #333;
+        border: 0;
+        width: 45%;
+        font-size: 1.6em;
+        margin: 15px 0;
+        cursor: pointer;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        font-weight: bold;
     }
     
 }

@@ -1,24 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-
 <div class="intro-text">
-    <h2> Question {{ question.id }}</h2>
-    <p class="intro-text">{{ question.question }}</p>
+    <h2>{{ page_heading }}</h2>
 </div>
-
-<div class="solar-body-overview solar-section">
-    <form method="POST" class="input-boxes">
-        <div class="radio-button">
-            <label for=""><input class="radio-button-input" type="radio" id="{{ question.choices[0] }}" name="{{ question.question }}" value="{{ question.choices[0] }}" required/>{{ question.choices[0] }}</label>
+<form method="POST" class="input-boxes">
+    {% for question in questions %}
+    <div class="question-section">
+        <div class="intro-text">
+            <p class="intro-text"><span class="question-number">Question {{ question.id }}: </span>{{ question.question }}</p>
         </div>
-        <div class="radio-button">
-            <label for=""><input class="radio-button-input" type="radio" id="{{ question.choices[1] }}" name="{{ question.question }}" value="{{ question.choices[1] }}" required/>{{ question.choices[1] }}</label>
+        <div class="solar-body-overview solar-section">
+            <div class="radio-button">
+                <label for=""><input class="radio-button-input" type="radio" id="{{ question.choices[0] }}" name="{{ question.question }}" value="{{ question.choices[0] }}" required/>{{ question.choices[0] }}</label>
+            </div>
+            <div class="radio-button">
+                <label for=""><input class="radio-button-input" type="radio" id="{{ question.choices[1] }}" name="{{ question.question }}" value="{{ question.choices[1] }}" required/>{{ question.choices[1] }}</label>
+            </div>
+            <div class="radio-button">
+                <label for=""><input class="radio-button-input" type="radio" id="{{ question.choices[2] }}" name="{{ question.question }}" value="{{ question.choices[2] }}" required/>{{ question.choices[2] }}</label>
+            </div>
         </div>
-        <div class="radio-button">
-            <label for=""><input class="radio-button-input" type="radio" id="{{ question.choices[2] }}" name="{{ question.question }}" value="{{ question.choices[2] }}" required/>{{ question.choices[2] }}</label>
-        </div>
-        <input type="submit" value="Next Question" id="begin-quiz" class="question-button" src="{{ url_for('get_question', id=1) }}">
-    </form>
-</div>
-
+    </div>
+    {% endfor %}
+    <input type="submit" value="Submit Answers" id="begin-quiz" class="question-submit-button">
+</form>
 {% endblock %}

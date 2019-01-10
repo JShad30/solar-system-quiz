@@ -2,12 +2,21 @@
 {% block content %}
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    <h4 class="solar-system-link"><a href="{{ url_for('get_question') }}">First Question</a></h4>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
     <p class="intro-text">Now you've been through the info, and know what you need too, it's time to take the quiz! Answer the questions and submit your answers as you go. Enter your name and begin! How many can you score?</p>
     <form method="POST" class="input-boxes">
         <input class="name-input-field" type="text" id="firstname" name="firstname" placeholder="Type First Name" required/>
         <input class="name-input-field" type="text" id="lastname" name="lastname" placeholder="Type Last Name" required/>
+        <input class="name-input-field" type="text" id="username" name="username" placeholder="Type Username" required/>
         <div class="solar-body-overview solar-section">
-            <button id="begin-quiz" class="solar-system-button"><h4 class="solar-system-link"><a href="{{ url_for('get_question', id=1) }}">First Question</a></h4></button>
+            <button type="submit" value="redirect" id="begin-quiz" class="solar-system-button"><h4 class="solar-system-link">Submit</h4></button>
         </div>
     </form>
 </div>

@@ -214,6 +214,7 @@
 
 .solar-body-overview button {
     width: 100%;
+    max-width: 400px;
     background-color: #333;
     height: 65px;
     color: #E8E8E8;
@@ -277,6 +278,15 @@
 
 /* Questions */ 
 
+.question-section {
+    margin-bottom: 70px;
+}
+
+.question-number {
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
 .radio-button {
     margin: 3px 0;
     margin-left: 20px;
@@ -294,21 +304,21 @@
     margin-right: 20px;
 }
 
-.solar-body-overview .input-boxes .question-button {
+.question-submit-button {
     height: 65px;
     color: #E8E8E8;
     background-color: #333;
     border: 0;
     width: 100%;
+    max-width: 400px;
     font-size: 1.6em;
     margin: 15px 0;
     cursor: pointer;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
-    font-weight: bold;
 }
 
-.solar-body-overview .input-boxes .question-button:hover {
+.question-submit-button:hover {
     transition-property: background-color;
     background-color: #000;
     transition-duration: 0.3s;
@@ -388,11 +398,7 @@
         flex-direction: column;
         justify-content: flex-start;
     }
-    
-    .solar-body-overview button {
-        max-width: 45%;
-    }
-    
+
     .solar-system-link-info-page {
         max-width: 45%;
     }
@@ -401,22 +407,6 @@
     
     .name-input-field {
         width: 45%;
-    }
-    
-    /* Questions pages */
-    
-    .solar-body-overview .input-boxes .question-button {
-        height: 65px;
-        color: #E8E8E8;
-        background-color: #333;
-        border: 0;
-        width: 45%;
-        font-size: 1.6em;
-        margin: 15px 0;
-        cursor: pointer;
-        transition-duration: 0.3s;
-        transition-timing-function: ease-in-out;
-        font-weight: bold;
     }
     
 }

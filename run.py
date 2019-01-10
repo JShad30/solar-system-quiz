@@ -60,16 +60,17 @@ def solar_quiz():
 
 
 """Iterating through the questions from the solar-bodies-info.json file"""    
-@app.route("/solar_quiz/question_<int:id>", methods=["GET", "POST"])#How to put the button in this part of the file to iterate through the questions?
-def get_question(id):
+@app.route("/solar_quiz/questions", methods=["GET", "POST"])#How to put the button in this part of the file to iterate through the questions?
+def get_question():
     # Set score variable here? score = 0
     questions = []
     score = 0
     with open("data/questions.json", "r") as json_data:
         questions = json.load(json_data)
-        q = questions[id - 1]["question"]
-        c = questions[id - 1]["choices"]
-        return render_template("questions.html", question=questions[id - 1])
+        """The following two lines were used when the questions were being displayed individually"""
+        """q = questions[id - 1]["question"]
+        c = questions[id - 1]["choices"]"""
+        return render_template("questions.html", page_heading="Quiz Questions", questions=questions)
 
 
 

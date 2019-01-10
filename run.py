@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, render_template, request, redirect, flash, session
+from flask import Flask, render_template, request, redirect, flash
 
 app = Flask(__name__)
 app.secret_key = "username_collected"
@@ -29,20 +29,6 @@ def fetch_names_to_show():
         show_names = names.readlines()
     return show_names
     
-"""def print_question(score):"""
-"""Iterate round the questions printing the question and choices"""  
-"""for question in questions:
-print(question["question"])
-print(question["choices"][0])
-print(question["choices"][1])
-print(question["choices"][2])"""
-"""Waiting for answerinput from user and checking whether this is the same as 'answer' in questions.json"""
-"""answer_given = input(question["answer"])
-if answer_given == question["answer"]:"""
-"""If the same add one to the score"""
-"""score += 1
-print(score)"""
-    
 
 
 """Rendering the home page"""
@@ -67,19 +53,20 @@ def solar_info():
 @app.route("/solar_quiz", methods=["GET", "POST"])
 def solar_quiz():
     if request.method == "POST":
-        flash("Thanks for playing {0}. Your username is {1}, so be sure to look for it on the leaderboard at the end.".format(request.form["firstname"], request.form["username"]))
+        flash("Thanks for playing {0}. Your username is {1}, so be sure to look for it on the leaderboard at the end".format(request.form["firstname"], request.form["username"]))
         write_to_file("data/names.txt", request.form["firstname"] + " " + request.form["lastname"] + " - Username: " + request.form["username"] + "\n")
     return render_template("solar-quiz.html", page_heading="Solar System Quiz")
+    
 
 
-
+"""Iterating through the questions from the solar-bodies-info.json file"""    
 @app.route("/solar_quiz/question_<int:id>", methods=["GET", "POST"])#How to put the button in this part of the file to iterate through the questions?
 def get_question(id):
     # Set score variable here? score = 0
     questions = []
+    score = 0
     with open("data/questions.json", "r") as json_data:
         questions = json.load(json_data)
-        score = 0
         q = questions[id - 1]["question"]
         c = questions[id - 1]["choices"]
         return render_template("questions.html", question=questions[id - 1])
@@ -87,7 +74,7 @@ def get_question(id):
 
 
 """Once last question is completed print the quiz"""
-@app.route("/solar_quiz/quiz_completed", methods=["POST"])
+@app.route("/solar_quiz/quiz_completed", methods=["GET", "POST"])
 def quiz_completed():
     if request.method == "POST":
         flash("Thanks for playing {}. You scored {{ score }}/20. See where you rank on the leaderboard.".format(request.form["firstname"]))

@@ -1,9 +1,9 @@
 import os
 import json
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, session
 
 app = Flask(__name__)
-app.secret_key = "Some Secret"
+app.secret_key = "username_collected"
 
 score = 0
 
@@ -29,19 +29,19 @@ def fetch_names_to_show():
         show_names = names.readlines()
     return show_names
     
-def print_question(score):
-    """Iterate round the questions printing the question and choices"""  
-    for question in questions:
-        print(question["question"])
-        print(question["choices"][0])
-        print(question["choices"][1])
-        print(question["choices"][2])
-        """Waiting for answerinput from user and checking whether this is the same as 'answer' in questions.json"""
-        answer_given = input(question["answer"])
-        if answer_given == question["answer"]:
-            """If the same add one to the score"""
-            score += 1
-        print(score)
+"""def print_question(score):"""
+"""Iterate round the questions printing the question and choices"""  
+"""for question in questions:
+print(question["question"])
+print(question["choices"][0])
+print(question["choices"][1])
+print(question["choices"][2])"""
+"""Waiting for answerinput from user and checking whether this is the same as 'answer' in questions.json"""
+"""answer_given = input(question["answer"])
+if answer_given == question["answer"]:"""
+"""If the same add one to the score"""
+"""score += 1
+print(score)"""
     
 
 
@@ -53,7 +53,7 @@ def index():
   
   
 """Rendering the solar info page"""   
-@app.route("/solar-info")
+@app.route("/solar_info")
 def solar_info():
     data = []
     with open("data/solar-bodies-info.json", "r") as json_data:
@@ -64,30 +64,30 @@ def solar_info():
         
 """Solar quiz and sub pages"""
 """Introducing the quiz and asking the player for their name to be presented later and written to the names file."""
-@app.route("/solar-quiz", methods=["GET", "POST"])
+@app.route("/solar_quiz", methods=["GET", "POST"])
 def solar_quiz():
     if request.method == "POST":
-        write_to_file("data/names.txt", request.form["firstname"] + " " + request.form["lastname"] + "\n")
+        flash("Thanks for playing {0}. Your username is {1}, so be sure to look for it on the leaderboard at the end.".format(request.form["firstname"], request.form["username"]))
+        write_to_file("data/names.txt", request.form["firstname"] + " " + request.form["lastname"] + " - Username: " + request.form["username"] + "\n")
     return render_template("solar-quiz.html", page_heading="Solar System Quiz")
-    
 
 
-"""Iterating through the questions from the solar-bodies-info.json file"""    
-@app.route("/solar-quiz/question/<int:id>")#How to put the button in this part of the file to iterate through the questions?
+
+@app.route("/solar_quiz/question_<int:id>", methods=["GET", "POST"])#How to put the button in this part of the file to iterate through the questions?
 def get_question(id):
     # Set score variable here? score = 0
     questions = []
     with open("data/questions.json", "r") as json_data:
         questions = json.load(json_data)
-        # Loop here to iterate? for question in questions:
-    q = questions[id - 1]["question"]
-    c = questions[id - 1]["choices"]
-    return render_template("questions.html", question=questions[id - 1])
+        score = 0
+        q = questions[id - 1]["question"]
+        c = questions[id - 1]["choices"]
+        return render_template("questions.html", question=questions[id - 1])
 
 
 
 """Once last question is completed print the quiz"""
-@app.route("/solar-quiz/quiz-completed", methods=["POST"])
+@app.route("/solar_quiz/quiz_completed", methods=["POST"])
 def quiz_completed():
     if request.method == "POST":
         flash("Thanks for playing {}. You scored {{ score }}/20. See where you rank on the leaderboard.".format(request.form["firstname"]))
@@ -97,7 +97,7 @@ def quiz_completed():
    
     
 """Post quiz leaderboard rendering"""
-@app.route("/solar-quiz/leaderboard")
+@app.route("/solar_quiz/leaderboard")
 def leaderboard():
     """Display the names from the text file"""
     show_names = fetch_names_to_show()

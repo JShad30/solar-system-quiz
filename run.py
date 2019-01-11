@@ -56,6 +56,7 @@ def solar_quiz():
         flash("Thanks for playing {0}. Your username is {1}, so be sure to look for it on the leaderboard at the end".format(request.form["firstname"], request.form["username"]))
         write_to_file("data/names.txt", request.form["firstname"] + " " + request.form["lastname"] + " - Username: " + request.form["username"] + "\n")
         return render_template("solar-quiz-user.html", page_heading="Solar System Quiz")
+        
     return render_template("solar-quiz.html", page_heading="Solar System Quiz")
 
 
@@ -64,14 +65,23 @@ def solar_quiz():
 @app.route("/solar_quiz/questions", methods=["GET", "POST"])#How to put the button in this part of the file to iterate through the questions?
 def get_question():
     # Set score variable here? score = 0
+    score = 0
     questions = []
     with open("data/questions.json", "r") as json_data:
         questions = json.load(json_data)
         """The following two lines were used when the questions were being displayed individually"""
         """q = questions[id - 1]["question"]
         c = questions[id - 1]["choices"]"""
+        
         if request.method == "POST":
-            flash("Thanks for playing {}. You scored {{ score }}/20. See where you rank on the leaderboard.")
+            if score == 20:
+                flash("Thanks for playing {0}. You scored {1}/20. Well done, that is a perfect score! See yourself on the leaderboard.")
+            elif score >= 15:
+                flash("Thanks for playing {0}. You scored {1}/20. That's a great score! See where you stand on the leaderboard.")
+            elif score >= 10:
+                flash("Thanks for playing {0}. You scored {1}/20. That's a decent score! See where you stand on the leaderboard, or look at the info.")
+            else:
+                flash("Thanks for playing {0}. You scored {1}/20. Have a look at the leaderboard, or the Solar Info page if you'd like to learn more about the solar system.")
             return render_template("quiz-completed.html", page_heading="Quiz Completed")
             
     return render_template("questions.html", page_heading="Quiz Questions", questions=questions)

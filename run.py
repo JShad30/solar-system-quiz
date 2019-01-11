@@ -55,8 +55,9 @@ def solar_quiz():
     if request.method == "POST":
         flash("Thanks for playing {0}. Your username is {1}, so be sure to look for it on the leaderboard at the end".format(request.form["firstname"], request.form["username"]))
         write_to_file("data/names.txt", request.form["firstname"] + " " + request.form["lastname"] + " - Username: " + request.form["username"] + "\n")
+        return render_template("solar-quiz-user.html", page_heading="Solar System Quiz")
     return render_template("solar-quiz.html", page_heading="Solar System Quiz")
-    
+
 
 
 """Iterating through the questions from the solar-bodies-info.json file"""    
@@ -64,23 +65,23 @@ def solar_quiz():
 def get_question():
     # Set score variable here? score = 0
     questions = []
-    score = 0
     with open("data/questions.json", "r") as json_data:
         questions = json.load(json_data)
         """The following two lines were used when the questions were being displayed individually"""
         """q = questions[id - 1]["question"]
         c = questions[id - 1]["choices"]"""
-        return render_template("questions.html", page_heading="Quiz Questions", questions=questions)
+        if request.method == "POST":
+            flash("Thanks for playing {}. You scored {{ score }}/20. See where you rank on the leaderboard.")
+            return render_template("quiz-completed.html", page_heading="Quiz Completed")
+            
+    return render_template("questions.html", page_heading="Quiz Questions", questions=questions)
 
 
 
 """Once last question is completed print the quiz"""
 @app.route("/solar_quiz/quiz_completed", methods=["GET", "POST"])
 def quiz_completed():
-    if request.method == "POST":
-        flash("Thanks for playing {}. You scored {{ score }}/20. See where you rank on the leaderboard.".format(request.form["firstname"]))
-        print(request.form)
-    return render_template("quiz-completed.html", page_heading="Solar System Quiz")
+    return render_template("quiz-completed.html") 
     
    
     

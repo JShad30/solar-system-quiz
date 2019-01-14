@@ -52,10 +52,6 @@ def solar_info():
 def solar_quiz():
     
     """Setting the inputed values as variables"""
-    #username = form.request["username"] #Sets the username input as a variable
-    #firstname = form.request["firstname"] #Sets the firstname input as a variable
-    #lastname = form.request["lastname"] #Sets the lastname input as a variable
-    
     if request.method == "POST":
         
         flash("Thanks for playing {0}. Your username is {1}, so be sure to look for it on the leaderboard at the end".format(request.form["firstname"], request.form["username"]))
@@ -67,29 +63,33 @@ def solar_quiz():
 
 
 """Iterating through the questions from the solar-bodies-info.json file"""    
-@app.route("/solar_quiz/questions", methods=["GET", "POST"])#How to put the button in this part of the file to iterate through the questions?
+@app.route("/solar_quiz/questions", methods=["GET", "POST"]) #How to put the button in this part of the file to iterate through the questions?
 def get_question():
     #Set the score variable to 0
     score = 0
     questions = []
+    print(request.form.items())
+    username = request.form["username"] #Sets the username input as a variable
+    firstname = request.form["firstname"] #Sets the firstname input as a variable
+    lastname = request.form["lastname"] #Sets the lastname input as a variable
     with open("data/questions.json", "r") as json_data:
         questions = json.load(json_data)
         if request.method == "POST":
             for question in questions: #This loop is supposed to iterate over the questions. Should this be done only in the questions.html though?"""
-                correct_answer = question.answer() #Variable correct_answer looks for the 'answer' value in questions.json
-                answer_given = request.form["choice-{{ question.id }}"] #Variable answer_given finds which was selected in questions.py
+                correct_answer = question["answer"] #Variable correct_answer looks for the 'answer' value in questions.json
+                answer_given = request.form["choice-" + str(question["id"])] #Variable answer_given finds which was selected in questions.py
                 """function to increase value of score by 1 if correct_answer is the same as answer_given"""
                 def add_score(score):
                     if answer_given.lower() == correct_answer:
                         score += 1
-                return score
+                    return score
             
             """At the end of the quiz when the score has been added display the correct message"""        
             if score == 20:
                 flash("Thanks for playing {0}. You scored {1}/20. Well done, that is a perfect score! See yourself on the leaderboard.".format(request.form["username"], request.form[str(score)]))
             elif score >= 15:
                 flash("Thanks for playing {0}. You scored {1}/20. That's a great score! See where you stand on the leaderboard.".format(request.form["username"], request.form[str(score)]))
-            elif score >= 10:
+            elif score <= 10:
                 flash("Thanks for playing {0}. You scored {1}/20. That's a decent score! See where you stand on the leaderboard, or look at the info.".format(request.form["username"], request.form[str(score)]))
             else:
                 flash("Thanks for playing {0}. You scored {1}/20. Have a look at the leaderboard, or the Solar Info page if you'd like to learn more about the solar system.".format(request.form["username"], request.form[str(score)]))

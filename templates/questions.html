@@ -11,17 +11,17 @@
         </div>
         <div class="solar-body-overview solar-section">
             <div class="radio-button">
-                <label for="{{ question.choices[0] }}"><input class="radio-button-input" type="radio" id="{{ question.choices[0] }}" name="{{ question.question }}" value="{{ question.choices[0] }}" required/>{{ question.choices[0] }}</label>
+                <label for="{{ question.choices[0] }}"><input class="radio-button-input" type="radio" id="option1-{{ question.id }}" name="choice-{{ question.id }}" value="option1" required/>{{ question.choices[0] }}</label>
             </div>
             <div class="radio-button">
-                <label for="{{ question.choices[1] }}"><input class="radio-button-input" type="radio" id="{{ question.choices[1] }}" name="{{ question.question }}" value="{{ question.choices[1] }}" required/>{{ question.choices[1] }}</label>
+                <label for="{{ question.choices[1] }}"><input class="radio-button-input" type="radio" id="option2-{{ question.id }}" name="choice-{{ question.id }}" value="option2" required/>{{ question.choices[1] }}</label>
             </div>
             <div class="radio-button">
-                <label for="{{ question.choices[2] }}"><input class="radio-button-input" type="radio" id="{{ question.choices[2] }}" name="{{ question.question }}" value="{{ question.choices[2] }}" required/>{{ question.choices[2] }}</label>
+                <label for="{{ question.choices[2] }}"><input class="radio-button-input" type="radio" id="option3-{{ question.id }}" name="choice-{{ question.id }}" value="option3" required/>{{ question.choices[2] }}</label>
             </div>
         </div>
     </div>
     {% endfor %}
-    <input type="submit" value="Submit Answers" id="begin-quiz" class="question-submit-button" href="{{ url_for('quiz_completed') }}">
+    <input type="submit" value="Submit Answers" id="begin-quiz" class="question-submit-button" href="{{ url_for('get_question') }}">
 </form>
 {% endblock %}

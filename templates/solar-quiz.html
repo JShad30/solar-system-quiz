@@ -2,14 +2,6 @@
 {% block content %}
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    {% for message in messages %}
-    <p>{{ message }}</p>
-    <h4 class="solar-system-link"><a href="{{ url_for('get_question') }}">First Question</a></h4>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
     <p class="intro-text">Now you've been through the info, and know what you need too, it's time to take the quiz! Answer the questions and submit your answers as you go. Enter your name and begin! How many can you score?</p>
     <form method="POST" class="input-boxes">
         <input class="name-input-field" type="text" id="firstname" name="firstname" placeholder="Type First Name" required/>

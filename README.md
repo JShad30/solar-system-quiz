@@ -48,7 +48,7 @@ When the user clicks on this button they are taken to a page with a form which a
 
 ### Questions
 
-They are then taken to the quiz questions. They will then answer each of the questions. All questions need to answered as the radio buttons are set as 'required'. The quiz pages are implemented through the templates, questions.html, quiz-completed.html, solar-quiz-uesr.html and 
+They are then taken to the quiz questions. They will then answer each of the questions. All questions need to answered as the radio buttons are set as 'required'. The quiz pages are implemented through the templates, questions.html, quiz-completed.html and solar-quiz-uesr.html.......
 
 ### Quiz completed message
 
@@ -59,6 +59,8 @@ The message is displayed using Python logic in 'run.py', and displayed using the
 The leaderboard is presented on the 'leaderboard.html' page and its route is /solar_quiz/leaderboard. The leaderboard is there for players that want to see their performance compared to other players.
 
 ### Features to Add
+
+.................................
 
 ## Technology Used
 

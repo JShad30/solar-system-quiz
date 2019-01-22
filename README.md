@@ -2,7 +2,7 @@
 
 This is my Milestone Project for the Practical Python part of the Full Stack Development Course. This site has been developed to give the user a basic understanding of the solar system. They can then test their knowledge by taking the quiz, and compare their performance with those of other users.
 
-The site has the same background images throughout the site, creating a consistent feel and user experience. The Solar Info page contains information that may be of interest to the user and uses images and an iteractive style that the user will find visually appealing.
+The site has the same background images throughout the site, creating a consistent feel and user experience. The Solar Info page contains information that may be of interest to the user and uses images and an interactive style that the user will find visually appealing.
 
 ## User Experience
 

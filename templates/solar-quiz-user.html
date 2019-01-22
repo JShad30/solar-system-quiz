@@ -6,7 +6,7 @@
     {% if messages %}
     {% for message in messages %}
     <p class="intro-text">{{ message }}</p>
-    <h4 class="solar-system-link"><a href="{{ url_for('get_question') }}">Questions</a></h4>
+    <h4 class="solar-system-link"><a href="{{ url_for('get_question', id = 1) }}">Questions</a></h4>
     {% endfor %}
     {% endif %}
     {% endwith %}

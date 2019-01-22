@@ -1,9 +1,16 @@
 import os
 import json
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, url_for, render_template, request, redirect, flash
 
 app = Flask(__name__)
 app.secret_key = "username_collected"
+
+
+
+"""Setting the Variables"""
+#first_name = request.form["firstname"]
+#last_name = request.form["lastname"]
+#user_name = request.form["username"]
 
 
 
@@ -11,6 +18,7 @@ app.secret_key = "username_collected"
 questions = []
 with open("data/questions.json", "r") as json_data:
     questions = json.load(json_data)
+    
 
 """The following functions take care of the printing of names and scores from the form to the text files and then printing to the leaderboard"""
 def write_to_file(filename, data):
@@ -65,7 +73,6 @@ def solar_quiz():
 @app.route("/solar_quiz/question/<int:id>", methods=["GET", "POST"]) #How to put the button in this part of the file to iterate through the questions?
 def get_question(id):
     #Set the score variable to 0
-    score = 0
     questions = []
     print(request.form.items()) #Mentor suggestion to show in console below
     with open("data/questions.json", "r") as json_data:
@@ -73,21 +80,26 @@ def get_question(id):
         q = questions[id - 1]["question"]
         c = questions[id - 1]["choices"]
         a = questions[id - 1]["answer"]
-        for question in questions:
+        for q in questions:
             if request.method == "POST":
+                score = 0 #Sets variable of score to 0
+                id += 1 #Increases id by one after the redirect
+                if id > 20:
+                    return redirect(url_for("quiz_completed"))
                 answer_given = request.form["choice"] #Variable answer_given finds which was selected in questions.py
                 """function to increase value of score by 1 if correct_answer is the same as answer_given"""
                 def add_score(score): #create the function with score as an argument - currently set at 0
                     if answer_given == a: #Check whether answer given and correct answer are the same
                         score += 1 #if so add 1
                     return score #Return the final score when all answers added together
-            
-        return render_template("questions.html", page_heading="Quiz Questions", question=questions[id - 1])
+                return redirect(url_for("get_question", id=id)) #redirects to the next question
+                
+            return render_template("questions.html", page_heading="Quiz Questions", question=questions[id - 1])
 
 
 """Once last question is completed print the quiz"""
 @app.route("/solar_quiz/quiz_completed", methods=["GET", "POST"])
-def quiz_completed(score):
+def quiz_completed():
     """At the end of the quiz when the score has been added display the correct message"""        
     if score == 20:
         flash("Thanks for playing {0}. You scored {1}/20. Well done, that is a perfect score! See yourself on the leaderboard.".format(request.form["username"], request.form[str(score)]))

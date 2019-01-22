@@ -23,6 +23,6 @@
             </div>
         </div>
     </div>
-    <input type="submit" value="Submit Answers" id="begin-quiz" class="question-submit-button" onclick="{{ url_for('get_question(3)', id = 1) }}">
+    <input type="submit" value="Submit Answers" id="begin-quiz" class="question-submit-button" href="{{ url_for('get_question', id = 1) }}">
 </form>
 {% endblock %}

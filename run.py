@@ -13,7 +13,6 @@ app.secret_key = "username_collected"
 #user_name = request.form["username"]
 
 
-
 """Calling the data from questions.json and putting it into a variable called questions"""
 questions = []
 with open("data/questions.json", "r") as json_data:
@@ -82,24 +81,24 @@ def get_question(id):
         a = questions[id - 1]["answer"]
         for q in questions:
             if request.method == "POST":
-                score = 0 #Sets variable of score to 0
-                id += 1 #Increases id by one after the redirect
+                score = 0
+                id += 1
                 if id > 20:
-                    return redirect(url_for("quiz_completed"))
+                    return render_template("quiz_completed.html", page_heading="Quiz Completed", score=score)
                 answer_given = request.form["choice"] #Variable answer_given finds which was selected in questions.py
                 """function to increase value of score by 1 if correct_answer is the same as answer_given"""
                 def add_score(score): #create the function with score as an argument - currently set at 0
                     if answer_given == a: #Check whether answer given and correct answer are the same
                         score += 1 #if so add 1
                     return score #Return the final score when all answers added together
-                return redirect(url_for("get_question", id=id)) #redirects to the next question
+                return redirect(url_for("get_question", id=id))
                 
             return render_template("questions.html", page_heading="Quiz Questions", question=questions[id - 1])
 
 
 """Once last question is completed print the quiz"""
 @app.route("/solar_quiz/quiz_completed", methods=["GET", "POST"])
-def quiz_completed():
+def quiz_completed(score):
     """At the end of the quiz when the score has been added display the correct message"""        
     if score == 20:
         flash("Thanks for playing {0}. You scored {1}/20. Well done, that is a perfect score! See yourself on the leaderboard.".format(request.form["username"], request.form[str(score)]))
@@ -109,7 +108,7 @@ def quiz_completed():
         flash("Thanks for playing {0}. You scored {1}/20. That's a decent score! See where you stand on the leaderboard, or look at the info.".format(request.form["username"], request.form[str(score)]))
     else:
         flash("Thanks for playing {0}. You scored {1}/20. Have a look at the leaderboard, or the Solar Info page if you'd like to learn more about the solar system.".format(request.form["username"], request.form[str(score)]))
-    return render_template("quiz-completed.html") 
+    return render_template("quiz-completed.html", page_heading="Quiz Complete", score=score) 
     
    
     

@@ -125,11 +125,11 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ## Credits
 
-Fine Art America - oort cloud picture
-
 ### Media
 
 There are several images used throughout the site:
+    Fine Art America - oort cloud picture
+    MetaBallStudio Youtube Channel - Video comparing Solar System object sizes in Solar Info Page
 
 ### Acknowledgements
 

@@ -60,10 +60,19 @@
 
 {% endfor %}
 
+<div class="solar-body-section">
+    <div class="text-overview">
+        <h3>Solar System Size Comparison</h3>
+        <p class="intro-text">See the video which compares the sizes of the different objects in the Solar System. </p>
+    </div>
+    <iframe width="956" height="538" src="https://www.youtube.com/embed/ampcQYXHkM4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <figcaption class="intro-text"><em>Thanks to the MetaBallStudio Youtube channel for this video</em></figcaption>
+</div>
+
 <div class="quiz-section-info-page">
     <div class="text-overview">
         <h3>Take the quiz</h3>
-        <p>Now you've been through the information, you should be in a position to take the test. Be sure to look at the leaderboard to see how you compare when you've finished. If you do not score well, don't worry. You will be able to come back to the info page and brush up on your knowledge at any time. Good Luck!</p>
+        <p class="intro-text">Now you've been through the information, you should be in a position to take the test. Be sure to look at the leaderboard to see how you compare when you've finished. If you do not score well, don't worry. You will be able to come back to the info page and brush up on your knowledge at any time. Good Luck!</p>
         <h4 class="solar-system-link-info-page"><a href="{{ url_for('solar_quiz') }}">Take Quiz</a></h4>
     </div>
 </div>

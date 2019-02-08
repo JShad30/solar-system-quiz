@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, url_for, render_template, request, redirect, flash, session
+from flask import Flask, url_for, render_template, request, redirect, flash, session, jsonify
 
 app = Flask(__name__)
 app.secret_key = "username_collected"
@@ -11,27 +11,6 @@ app.secret_key = "username_collected"
 questions = []
 with open("data/questions.json", "r") as json_data:
     questions = json.load(json_data)
-    
-    
-"""Writing data received on forms to the json file"""
-#with open("data/quizplayers.json", "w") as 
-    
-
-"""The following functions take care of the printing of names and scores from the form to the text files and then printing to the leaderboard"""
-def write_to_file(filename, data):
-    """Handle the process of writing the data to the to files"""
-    with open(filename, "a") as file:
-        file.writelines(data)
-
-def add_names(firstname, lastname):
-    write_to_file("data/names.txt", request.form["firstname"] + " " + request.form["lastname"] + "\n")
-    
-def fetch_names_to_show():
-    """Fetch all of the names from the text file"""
-    show_names = []
-    with open("data/names.txt", "r") as names:
-        show_names = names.readlines()
-    return show_names
     
 
 
@@ -73,7 +52,6 @@ def solar_quiz():
         session['score'] = score
         """Setting the Variables"""
         flash("Thanks for playing {0}. Your username is {1}, so be sure to look for it on the leaderboard at the end".format(request.form["firstname"], request.form["username"]))
-        write_to_file("data/names.txt", request.form["firstname"] + " " + request.form["lastname"] + " - Username: " + request.form["username"] + "\n")
         return render_template("solar-quiz-user.html", page_heading="Solar System Quiz", username=username, firstname=firstname, lastname=lastname)
         
     return render_template("solar-quiz.html", page_heading="Solar System Quiz")
@@ -130,9 +108,7 @@ def quiz_completed():
 @app.route("/solar_quiz/leaderboard")
 def leaderboard():
     session.clear()
-    """Display the names from the text file"""
-    show_names = fetch_names_to_show()
-    return render_template("leaderboard.html", page_heading="Current Leaderboard", names=show_names)
+    return render_template("leaderboard.html", page_heading="Current Leaderboard")
 
 
 

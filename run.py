@@ -1,6 +1,7 @@
 import os
 import json
-from flask import Flask, url_for, render_template, request, redirect, flash, session, jsonify
+import csv
+from flask import Flask, url_for, render_template, request, redirect, flash, session
 
 app = Flask(__name__)
 app.secret_key = "username_collected"
@@ -12,6 +13,13 @@ questions = []
 with open("data/questions.json", "r") as json_data:
     questions = json.load(json_data)
     
+    
+    
+"""def write_info_to_names(path, filename, data):
+    filename = "data/names.json"
+    with open(filename, 'a') as results:
+        json.dump(player, results)"""
+
 
 
 """Rendering the home page"""
@@ -81,7 +89,7 @@ def get_question(username, id):
                 print(session['score'])
                 #return score #Return the final score when all answers added together
                 id += 1
-                if id > len(questions):
+                if id > 5: #len(questions):
                     return redirect(url_for("quiz_completed", page_heading="Quiz Completed", username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score']))
                 return redirect(url_for("get_question", username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score'], id=id))
                 
@@ -92,6 +100,63 @@ def get_question(username, id):
 """Once last question is completed print the quiz"""
 @app.route("/solar_quiz/username/quiz_completed", methods=["GET", "POST"])
 def quiz_completed():
+    
+    """Appending new players to the names.csv file"""
+    with open("data/names.txt", "w") as player_names:
+        fieldnames = ['username', 'firstname', 'lastname', 'score']
+        writer = csv.DictWriter(player_names, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow({
+            'username': session['username'],
+            'firstname': session['firstname'],
+            'lastname': session['lastname'],
+            'score': str(session['score'])
+        })
+    
+    """Adding the csv file data into a json file to be printed on the leaderboard"""    
+    csvfile = open("data/names.txt", "r")
+    jsonfile = open("data/names.json", "a")
+    
+    fieldnames = ('username','firstname','lastname','score')
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        json.dump(row, jsonfile)
+        jsonfile.write('\n')
+    
+    """with open("data/names.txt") as player_names:
+        read_players = csv.reader(player_names)
+        next(read_players)
+        player_list = dict((rows[0], rows[1:]) for rows in read_players)"""
+   
+    """def player_score():
+        new_player = {
+            "username": session['username'], 
+            "firstname": session['firstname'], 
+            "lastname": session['lastname'], 
+            "score": str(session['score'])
+        }
+        with open("data/names.csv", "a") as player_names:
+            player_names.writelines()"""
+    """Saving the players and their scores to names.json file"""
+    """names = {}
+    names['players'] = []
+    names['players'].append({  
+        'username': session['username'],
+        'firstname': session['firstname'],
+        'lastname': session['lastname'],
+        'score': str(session['score'])
+    })"""
+        
+    """names = {}
+    names['username'] = session['username']
+    names['firstname'] = session['firstname']
+    names['lastname'] = session['lastname']
+    names['score'] = str(session['score'])"""
+    
+    """with open('data/names.json', 'a') as names:
+        #json.dump(names, player, ensure_ascii=False, indent=4)
+        names.writelines('{"username": "' + session['username'] + '", "firstname": "' + session['firstname'] + '", "lastname": "' + session['lastname'] + '", "score": "' + str(session['score']) + '"}')"""
+
     if session['score'] == 20:
         flash("Thanks for playing {0}. You scored {1}/{2}. Well done, that is a perfect score! See yourself on the leaderboard.".format(session['username'], session['score'], len(questions)))
     elif session['score'] >= 15:
@@ -108,7 +173,10 @@ def quiz_completed():
 @app.route("/solar_quiz/leaderboard")
 def leaderboard():
     session.clear()
-    return render_template("leaderboard.html", page_heading="Current Leaderboard")
+    player_names = []
+    with open("data/names.json", "r") as json_data:
+        player_names = json.load(json_data)
+    return render_template("leaderboard.html", page_heading="Current Leaderboard", player_names=player_names)
 
 
 

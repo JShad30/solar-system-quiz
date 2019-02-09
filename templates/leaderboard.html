@@ -5,11 +5,12 @@
     <h2>{{ page_heading }}</h2>
     <p class="intro-text">Here's the leaderboard so see where you rank. If you are unhappy with the result, be sure to go to the Solar System Info page to brush up on your knowledge before retaking the quiz.</p>
     <div class="leaderboard">
-        {% for name in show_names %}
-        <p>{{ username }}{{ score }}</p>
+        {% for name in player_names %}
+        <p>{{ name.username }} - {{ name.score }}</p>
         {% endfor %}
     </div>
 </div>
+
 <h4 class="solar-system-link"><a href="{{ url_for('solar_info') }}">Solar Info</a></h4>
 <h4 class="solar-system-link"><a href="{{ url_for('index') }}">Back Home</a></h4>
 {% endblock %}

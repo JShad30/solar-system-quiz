@@ -13,13 +13,6 @@ app.secret_key = "username_collected"
 questions = []
 with open("data/questions.json", "r") as json_data:
     questions = json.load(json_data)
-    
-    
-    
-"""def write_info_to_names(path, filename, data):
-    filename = "data/names.json"
-    with open(filename, 'a') as results:
-        json.dump(player, results)"""
 
 
 
@@ -84,12 +77,13 @@ def get_question(username, id):
                 #def add_score(score, a): #create the function with score as an argument - currently set at 0
                 if answer_given.lower() == a.lower(): #Check whether answer given and correct answer are the same
                     session['score'] += 1 #if so add 1
+                #Check in terminal that answers given and answer were the same, and that score was being added correctly
                 print(answer_given.lower())
                 print(a.lower())
                 print(session['score'])
                 #return score #Return the final score when all answers added together
                 id += 1
-                if id > 5:#len(questions):
+                if id > len(questions):
                     return redirect(url_for("quiz_completed", page_heading="Quiz Completed", username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score']))
                 return redirect(url_for("get_question", username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score'], id=id))
                 
@@ -105,16 +99,18 @@ def quiz_completed():
     names['firstname'] = session['firstname']
     names['lastname'] = session['lastname']
     names['score'] = str(session['score'])
+    names['score_int'] = session['score']
     
     with open('data/names.txt', 'a') as names:
         #json.dump(names, player, ensure_ascii=False, indent=4)
         names.writelines('{"username": "' + session['username'] + '", "firstname": "' + session['firstname'] + '", "lastname": "' + session['lastname'] + '", "score": "' + str(session['score']) + '"}' + '\n')
 
-    if session['score'] == 20:
+    """If statement to work out score, and display correct message accordingly. Scores here worked out in percentages, so that extra questions can be added at any time without havig to rewrite the code."""
+    if (session['score']/len(questions))*100 == 100:
         flash("Thanks for playing {0}. You scored {1}/{2}. Well done, that is a perfect score! See yourself on the leaderboard.".format(session['username'], session['score'], len(questions)))
-    elif session['score'] >= 15:
+    elif (session['score']/len(questions))*100 >= 75:
         flash("Thanks for playing {0}. You scored {1}/{2}. That's a great score! See where you stand on the leaderboard.".format(session['username'], session['score'], len(questions)))
-    elif session['score'] >= 10:
+    elif (session['score']/len(questions))*100 >= 50:
         flash("Thanks for playing {0}. You scored {1}/{2}. That's a decent score! See where you stand on the leaderboard, or look at the info.".format(session['username'], session['score'], len(questions)))
     else:
         flash("Thanks for playing {0}. You scored {1}/{2}. Have a look at the leaderboard, or the Solar Info page if you'd like to learn more about the solar system.".format(session['username'], session['score'], len(questions)))

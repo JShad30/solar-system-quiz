@@ -1,2 +1,19 @@
-username,firstname,lastname,score
-j_shad86,James,Shadrake,3
+{"username": "test", "firstname": "James", "lastname": "Test", "score": "2"}
+{"username": "next_attempt", "firstname": "Next", "lastname": "Attempt", "score": "2"}
+{"username": "kjhgfds", "firstname": "?kjhgfd", "lastname": "kjhgfd", "score": "3"}
+{"username": ",mnbvcx", "firstname": "piuytr", "lastname": ";lkjhgfd", "score": "2"}
+{"username": "Yet_anotehr", "firstname": "James", "lastname": "Next", "score": "3"}
+{"username": "123", "firstname": "Johnny", "lastname": "Mowlem", "score": "0"}
+{"username": "jhgfds", "firstname": "/';lkjhgfds", "lastname": "kjhgfds", "score": "3"}
+{"username": "hgfds", "firstname": "lkjhgfds", "lastname": "jhgfds", "score": "2"}
+{"username": "jhgfds", "firstname": "kjhgfd", "lastname": "kjhgfd", "score": "3"}
+{"username": "hththththttht", "firstname": "';lkjhg", "lastname": "kjh", "score": "2"}
+{"username": "kjhgfds", "firstname": "kjhgfd", "lastname": "kjhgf", "score": "2"}
+{"username": "does_this_work", "firstname": "James", "lastname": "Shadrake", "score": "3"}
+{"username": "mayo", "firstname": "Teddy", "lastname": "Mayer", "score": "2"}
+{"username": "mayo", "firstname": "Teddy", "lastname": "Mayer", "score": "2"}
+{"username": "mayo", "firstname": "Teddy", "lastname": "Mayer", "score": "2"}
+{"username": "mayo", "firstname": "Teddy", "lastname": "Mayer", "score": "2"}
+{"username": "mayo", "firstname": "Teddy", "lastname": "Mayer", "score": "2"}
+{"username": "jhgfds", "firstname": "hgfds", "lastname": "hgfd", "score": "5"}
+{"username": "jacob_1", "firstname": "Jacob", "lastname": "Smith", "score": "3"}

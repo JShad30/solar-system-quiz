@@ -28,12 +28,25 @@
 /*Top Bar Section*/
 
 .top-bar {
-    height: 80px;
-    background-color: transparent;
+    width: 100%;
+    height: 60px;
     color: #E8E8E8;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-content: center;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    position: fixed;
+}
+
+/* Changing navbar on scroll */
+
+.top-bar.scrolled {
+    transition-property: background-color;
+    background-color: #000000;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
 }
 
 .top-bar-content {
@@ -47,11 +60,21 @@
     color: #E8E8E8;
     text-decoration: none;
     font-size: 1.2em;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.top-bar-content h1 a:hover {
+    transition-property: color;
+    color: #333333;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
 }
 
 /*Main part of the page*/
 
 .main-content-section {
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +92,7 @@
 
 .intro-text h2 {
     font-size: 2em;
+    margin-bottom: 30px;
 }
 
 .intro-text p {
@@ -104,9 +128,11 @@
     font-size: 1.2em;
 }
 
-/*Links to other pages*/
+/* Links to other pages */
+/* Used for the different types of links on the different pages */
 
-.text-overview h4 {
+.text-overview h4,
+.intro-text h4 {
     width: 100%;
     background-color: #333;
     height: 65px;
@@ -115,19 +141,20 @@
     transition-timing-function: ease-in-out;
 }
 
-.text-overview h4:hover {
+.text-overview h4:hover,
+.intro-text h4:hover {
     transition-property: background-color;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
     background-color: #000;
 }
 
-.text-overview h4 a {
+.text-overview h4 a,
+.intro-text h4 a {
     color: #E8E8E8;
     text-decoration: none;
-    font-size: 1.6em;
-    width: inherit;
     height: inherit;
+    font-size: 1.6em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,7 +181,8 @@
     height: auto;
 }
 
-.solar-system-button {
+.solar-system-button,
+.question-submit-button {
     width: 100%;
     height: 65px;
     padding: 0;
@@ -216,7 +244,6 @@
     width: 100%;
     max-width: 400px;
     background-color: #333;
-    height: 65px;
     color: #E8E8E8;
     text-decoration: none;
     font-size: 1.6em;
@@ -284,7 +311,7 @@
 /* Questions */ 
 
 .question-section {
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
 
 .question-number {
@@ -315,8 +342,8 @@
     background-color: #333;
     border: 0;
     width: 100%;
-    max-width: 400px;
     font-size: 1.6em;
+    font-weight: 600;
     margin: 15px 0;
     cursor: pointer;
     transition-duration: 0.3s;
@@ -328,6 +355,18 @@
     background-color: #000;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
+}
+
+.radio-button label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.radio-button label input {
+    height: 20px;
+    width: 20px;
 }
 
 /*Footer area*/
@@ -404,12 +443,6 @@
         justify-content: space-between;
         align-items: flex-start;
     }
-    
-    .solar-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
 
     .solar-system-link-info-page {
         max-width: 45%;
@@ -422,6 +455,14 @@
     /*Quiz page*/
     
     .name-input-field {
+        width: 45%;
+    }
+    
+    .question-submit-button {
+        width: 45%;
+    }
+    
+    .text-overview h4 {
         width: 45%;
     }
     
@@ -440,5 +481,3 @@
     }
     
 }
-
-

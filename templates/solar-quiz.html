@@ -2,14 +2,12 @@
 {% block content %}
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
-    <p class="intro-text">Now you've been through the info, and know what you need too, it's time to take the quiz! Answer the questions and submit your answers as you go. Enter your name and begin! How many can you score?</p>
-    <form method="POST" class="input-boxes">
-        <input class="name-input-field" type="text" id="firstname" name="firstname" placeholder="Type First Name" required/>
-        <input class="name-input-field" type="text" id="lastname" name="lastname" placeholder="Type Last Name" required/>
-        <input class="name-input-field" type="text" id="username" name="username" placeholder="Type Username" required/>
-        <div class="solar-body-overview solar-section">
-            <button type="submit" value="redirect" id="begin-quiz" class="solar-system-button"><h4 class="solar-system-link">Submit</h4></button>
-        </div>
-    </form>
+    <p>Now you've been through the info, and know what you need too, it's time to take the quiz! Answer the questions and submit your answers as you go. Enter your name and begin! How many can you score?</p>
 </div>
+<form method="POST" class="input-boxes">
+    <input class="name-input-field" type="text" id="firstname" name="firstname" placeholder="Type First Name" required/>
+    <input class="name-input-field" type="text" id="lastname" name="lastname" placeholder="Type Last Name" required/>
+    <input class="name-input-field" type="text" id="username" name="username" placeholder="Type Username" required/>
+    <input type="submit" value="Submit" id="begin-quiz" class="question-submit-button">
+</form>
 {% endblock %}

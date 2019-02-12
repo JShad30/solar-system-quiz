@@ -5,8 +5,10 @@
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
-    <p class="intro-text">{{ message }}</p>
-    <h4 class="solar-system-link"><a href="{{ url_for('get_question', username=username, firstname=firstname, lastname=lastname, id = 1) }}">Questions</a></h4>
+    <div class="text-overview">
+        <p>{{ message }}</p>
+        <h4 class="solar-system-link"><a href="{{ url_for('get_question', username=username, firstname=firstname, lastname=lastname, id = 1) }}">First Question</a></h4>
+    </div>
     {% endfor %}
     {% endif %}
     {% endwith %}

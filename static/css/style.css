@@ -128,6 +128,10 @@
     font-size: 1.2em;
 }
 
+.page-links div div h4 {
+    width: 100%;
+}
+
 /* Links to other pages */
 /* Used for the different types of links on the different pages */
 
@@ -369,6 +373,114 @@
     width: 20px;
 }
 
+/* Quiz Completed buttons */
+
+.quiz-completed-leaderboard-link {
+    width: 100%;
+    background-color: #333;
+    height: 65px;
+    margin: 15px 0;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.quiz-completed-leaderboard-link:hover {
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    background-color: #000;
+}
+
+.quiz-completed-leaderboard-link a {
+    color: #E8E8E8;
+    text-decoration: none;
+    height: inherit;
+    font-size: 1.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.3;
+    transition-timing-function: ease-in-out;
+}
+
+/* Leaderboard Page */
+
+.leaderboard {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard-header-row {
+    border: 2px solid #dddddd;
+    height: 65px;
+    background-color: #333333;
+    font-size: 1.4em;
+    font-weight: 900;
+}
+
+.leaderboard-username {
+    border: 1px solid #4A4343;
+    height: 50px;
+    align-items: center;
+    padding: 0 10px;
+}
+
+#username {
+    font-size: 1.2em;
+    text-align: left;
+}
+
+#score {
+    font-size: 1.6em;
+    font-weight: 900;
+    text-align: center;
+}
+
+/*Buttons at the bottom of the leaderboard*/
+
+.leaderboard-page-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.leaderboard-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    background-color: #333;
+    border: 0;
+    width: 100%;
+    font-size: 1.6em;
+    font-weight: 600;
+    margin: 15px 0;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.leaderboard-link:hover {
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.leaderboard-page-buttons h4 a {
+    text-decoration: none;
+    color: #E8E8E8;
+}
+
 /*Footer area*/
 
 /*Social media links*/
@@ -451,6 +563,17 @@
     .solar-body-section iframe {
         height: 450px;
     }
+    
+    /* Leaderboard Page*/
+    
+    .leaderboard-page-buttons {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .leaderboard-link {
+        max-width: 45%;
+    }
         
     /*Quiz page*/
     
@@ -463,6 +586,12 @@
     }
     
     .text-overview h4 {
+        width: 45%;
+    }
+    
+    /* Quiz completed link */
+    
+    .intro-text .quiz-completed-leaderboard-link {
         width: 45%;
     }
     

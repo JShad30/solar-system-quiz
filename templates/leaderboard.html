@@ -1,18 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-    
+
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
     <p class="intro-text">Here's the leaderboard so see where you rank. If you are unhappy with the result, be sure to go to the Solar System Info page to brush up on your knowledge before retaking the quiz.</p>
     <div class="leaderboard">
-        {% for name in player_names %}
-        <p>{{ name.username }} - {{ name.score }}</p>
-        {% endfor %}
+        <table class="leaderboard-table">
+            <tr class="leaderboard-header">
+                <th class="leaderboard-header-row">Username</th>
+                <th class="leaderboard-header-row">Score</th>
+            </tr>
+            {% for name in player_names %}
+            <tr class="leaderboard-row">
+                <td class="leaderboard-username" id="username">{{ name.username }}</td>
+                <td class="leaderboard-username" id="score">{{ name.score }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 </div>
 
-<div class="text-overview">
-    <h4 class="solar-system-link"><a href="{{ url_for('solar_info') }}">Solar System Info</a></h4>
-    <h4 class="solar-system-link"><a href="{{ url_for('index') }}">Back Home</a></h4>
+<div class="leaderboard-page-buttons">
+    <h4 class="leaderboard-link"><a href="{{ url_for('solar_info') }}">Solar System Info</a></h4>
+    <h4 class="leaderboard-link"><a href="{{ url_for('index') }}">Back Home</a></h4>
 </div>
 {% endblock %}

@@ -111,9 +111,9 @@
     },
     {
         "id": "12",
-        "question": "Which of these is not one of Pluto's moons?",
+        "question": "Which of these is not a moon of Pluto?",
         "choices": [
-            "Europa",
+            "Charon",
             "Hydra",
             "Io",
             "Nix"],

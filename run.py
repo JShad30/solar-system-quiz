@@ -92,7 +92,6 @@ def get_question(username, id):
 """Once last question is completed print the quiz"""
 @app.route("/solar_quiz/quiz_completed", methods=["GET", "POST"])
 def quiz_completed():
-    
     names = {}
     names['username'] = session['username']
     names['firstname'] = session['firstname']
@@ -104,15 +103,14 @@ def quiz_completed():
         names.writelines('{"username": "' + session['username'] + '", "firstname": "' + session['firstname'] + '", "lastname": "' + session['lastname'] + '", "score": "' + str(session['score']) + '"}' + '\n')
 
     """If statement to work out score, and display correct message accordingly. Scores here worked out in percentages, so that extra questions can be added at any time without havig to rewrite the code."""
-    if session['score']/len(questions)*100 == 100:
+    if session['score'] == 20:
         flash("Thanks for playing {0}. You scored {1}/{2}. Well done, that is a perfect score! See yourself on the leaderboard.".format(session['username'], session['score'], len(questions)))
-    elif session['score']/len(questions)*100 >= 75:
+    elif session['score'] >= 15:
         flash("Thanks for playing {0}. You scored {1}/{2}. That's a great score! See where you stand on the leaderboard.".format(session['username'], session['score'], len(questions)))
-    elif session['score']/len(questions)*100 >= 50:
+    elif session['score'] >= 10:
         flash("Thanks for playing {0}. You scored {1}/{2}. That's a decent score! See where you stand on the leaderboard, or look at the info.".format(session['username'], session['score'], len(questions)))
     else:
         flash("Thanks for playing {0}. You scored {1}/{2}. Have a look at the leaderboard, or the Solar Info page if you'd like to learn more about the solar system.".format(session['username'], session['score'], len(questions)))
-    
     return render_template("quiz-completed.html", page_heading="Quiz Completed", username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score'])
     
    

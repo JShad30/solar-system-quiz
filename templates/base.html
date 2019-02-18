@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     
     <head>
         <meta charset="UTF-8">
@@ -13,7 +13,7 @@
     
     <body>
         
-        <section class="content">
+        <div class="content">
             <div class="image-shade">
         
                 <nav class="top-bar">
@@ -23,12 +23,12 @@
                 </nav>
                 
                 <section class="main-content-section">
-                    <section class="container">
+                    <div class="container">
                 
                 {% block content %}
                 {% endblock %}
                 
-                    </section>
+                    </div>
                 </section>
             
                 <footer class="footer-area">
@@ -43,7 +43,7 @@
                 </footer>
          
             </div>
-        </section>
+        </div>
     
         <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>    
         <script src="../static/js/navbar.js"></script>

@@ -49,7 +49,7 @@
             <p class="list">Distance from sun: {{ solar_body.distance_from_sun }}<p>
             
 {% endif %}
-            <button id="{{ solar_body.id }}" class="solar-system-button"><h4 class="solar-system-link">More Info</h4></button>
+            <h4 class="solar-system-link"><button id="{{ solar_body.id }}" class="solar-system-button">More Info</button></h4>
             <p class="description {{ solar_body.id }}">{{ solar_body.description }}</p>
         </div>
         <div class="solar-body-image solar-section">
@@ -60,14 +60,17 @@
 
 {% endfor %}
 
-<div class="solar-body-section">
+<div class="video-section">
     <div class="text-overview">
         <h3>Solar System Size Comparison</h3>
         <p class="intro-text">See the video which compares the sizes of the different objects in the Solar System. </p>
     </div>
-    <iframe width="956" height="538" src="https://www.youtube.com/embed/ampcQYXHkM4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <figcaption class="intro-text"><em>Source: MetaBallStudio Youtube channel</em></figcaption>
+    <figure class="video">
+        <iframe width="956" height="538" src="https://www.youtube.com/embed/ampcQYXHkM4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <figcaption class="video-caption"><em>Source: MetaBallStudio Youtube channel</em></figcaption>
+    </figure>
 </div>
+
 
 <div class="quiz-section-info-page">
     <div class="text-overview">

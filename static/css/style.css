@@ -274,9 +274,19 @@
     margin-bottom: 100px;
 }
 
-.solar-body-section iframe {
+.video-section {
+    margin: 30px 0 60px 0;
+}
+
+.video-section .video iframe {
     max-width: 100%;
     height: 200px;
+    border: 0;
+}
+
+.video-caption {
+    color: #E8E8E8;
+    margin: 20px 0 0 0;
 }
 
 /*Quiz Page*/
@@ -307,9 +317,10 @@
     padding: 10px;
 }
 
-.solar-system-button h4 a {
+.solar-system-link .solar-system-button {
     text-decoration: none;
     color: #E8E8E8;
+    font-weight: 900;
 }
 
 /* Questions */ 
@@ -399,7 +410,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition-duration: 0.3s;
+    transition-duration: 0.3;
     transition-timing-function: ease-in-out;
 }
 
@@ -530,7 +541,7 @@
 
 @media(min-width: 500px) {
     
-    .solar-body-section iframe {
+    .video-section .video iframe {
         height: 350px;
     }
 }
@@ -560,7 +571,7 @@
         max-width: 45%;
     }
     
-    .solar-body-section iframe {
+    .video-section .video iframe {
         height: 450px;
     }
     
@@ -604,7 +615,7 @@
         margin: auto;
     }
     
-    .solar-system-section iframe {
+    .video-section .video iframe {
         height: 500px;
         max-width: 100%;
     }

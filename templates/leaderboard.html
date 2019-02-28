@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!--Heading and intro to the leaderboard page-->
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
     <p class="intro-text">Here's the leaderboard so see where you rank. If you are unhappy with the result, be sure to go to the Solar System Info page to brush up on your knowledge before retaking the quiz.</p>
+    
     <div class="leaderboard">
+        <!--Table to display the leaderboard-->
         <table class="leaderboard-table">
+            <!--Headings of the table-->
             <tr class="leaderboard-header">
                 <th class="leaderboard-header-row">Username</th>
                 <th class="leaderboard-header-row">Score</th>
             </tr>
+            
+            <!--For each of the names in the names.txt file, a row in the table should be added as follows-->
             {% for name in player_names %}
             <tr class="leaderboard-row">
                 <td class="leaderboard-username" id="username">{{ name.username }}</td>
@@ -18,8 +24,10 @@
             {% endfor %}
         </table>
     </div>
+    
 </div>
 
+<!--Links back to the home page or the solar system info page-->
 <div class="leaderboard-page-buttons">
     <h4 class="leaderboard-link"><a href="{{ url_for('solar_info') }}">Solar System Info</a></h4>
     <h4 class="leaderboard-link"><a href="{{ url_for('index') }}">Back Home</a></h4>

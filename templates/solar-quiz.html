@@ -4,10 +4,13 @@
     <h2>{{ page_heading }}</h2>
     <p>Now you've been through the info, and know what you need too, it's time to take the quiz! Answer the questions and submit your answers as you go. Enter your name and begin! How many can you score?</p>
 </div>
+
+<!--This form will have the three text boxes to be filled in by the user. When the input button is selected it will initiate a session cookie, that will last until the quiz is completed-->
 <form method="POST" class="input-boxes">
     <input class="name-input-field" type="text" id="firstname" name="firstname" placeholder="Type First Name" required/>
     <input class="name-input-field" type="text" id="lastname" name="lastname" placeholder="Type Last Name" required/>
     <input class="name-input-field" type="text" id="username" name="username" placeholder="Type Username" required/>
     <input type="submit" value="Submit" id="begin-quiz" class="question-submit-button">
 </form>
+
 {% endblock %}

@@ -2,11 +2,11 @@ import os
 import json
 import csv
 from flask import Flask, url_for, render_template, request, redirect, flash, session
-import ast
+"""from flask.ext.session import Session"""
 
 app = Flask(__name__)
 app.secret_key = "username_collected"
-
+"""sess = Session()"""
 
 
 """Calling the data from questions.json and putting it into a variable called questions"""
@@ -19,7 +19,7 @@ with open("data/questions.json", "r") as json_data:
 """Rendering the home page"""
 @app.route("/")
 def index():
-    session.clear()
+    session.clear() #Make sure no session exists when this page is accessed
     return render_template("index.html", page_heading="Welcome")
   
   
@@ -27,7 +27,7 @@ def index():
 """Rendering the solar info page"""   
 @app.route("/solar_info")
 def solar_info():
-    session.clear()
+    session.clear() #Make sure no session exists when this page is accessed
     data = []
     with open("data/solar-bodies-info.json", "r") as json_data:
         data = json.load(json_data)
@@ -44,9 +44,7 @@ def solar_quiz():
         username = request.form["username"]
         firstname = request.form["firstname"]
         lastname = request.form["lastname"]
-        #Set the score variable to be used in get_question to 0
-        score = 0
-        
+        score = 0 #Set the score variable to be used in get_question to 0
         """Creating the sessions for the variables"""
         session['username'] = username
         session['firstname'] = firstname
@@ -66,40 +64,48 @@ def get_question(username, id):
     questions = []
     print(request.form.items()) #Mentor suggestion to show in console below
     with open("data/questions.json", "r") as json_data:
+        
+        """Loading the questions, choices and answers from the questions json file"""
         questions = json.load(json_data)
         q = questions[id - 1]["question"]
         c = questions[id - 1]["choices"]
         a = questions[id - 1]["answer"]
+        
+        
         for q in questions:
             if request.method == "POST":
                 answer_given = request.form["choice"] #Variable answer_given finds which was selected in questions.py
-                """function to increase value of score by 1 if correct_answer is the same as answer_given"""
-                #def add_score(score, a): #create the function with score as an argument - currently set at 0
+                """increase value of score by 1 if correct_answer is the same as answer_given"""
                 if answer_given.lower() == a.lower(): #Check whether answer given and correct answer are the same
                     session['score'] += 1 #if so add 1
-                #Check in terminal that answers given and answer were the same, and that score was being added correctly
+                """Check in terminal that answers given and answer were the same, and that score was being added correctly"""
                 print(answer_given.lower())
                 print(a.lower())
                 print(session['score'])
-                #return score #Return the final score when all answers added together
+                
+                """Add one to id"""
                 id += 1
-                if id > len(questions):
+                if id > 3:
                     return redirect(url_for("quiz_completed", page_heading="Quiz Completed", username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score']))
                 return redirect(url_for("get_question", username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score'], id=id))
                 
             return render_template("questions.html", page_heading="Quiz Questions", question=questions[id - 1], username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score'], id=id)
+            
+            
 
 """Once last question is completed print the quiz"""
 @app.route("/solar_quiz/quiz_completed", methods=["GET", "POST"])
 def quiz_completed():
     names = {}
+    
+    #Setting variables for the data collected in the form and the score
     names['username'] = session['username']
     names['firstname'] = session['firstname']
     names['lastname'] = session['lastname']
     names['score'] = str(session['score'])
     
+    """write the variables and the score to a dictionary"""
     with open('data/names.txt', 'a') as names:
-        #json.dump(names, player, ensure_ascii=False, indent=4)
         names.writelines('{"username": "' + session['username'] + '", "firstname": "' + session['firstname'] + '", "lastname": "' + session['lastname'] + '", "score": "' + str(session['score']) + '"}' + '\n')
 
     """If statement to work out score, and display correct message accordingly. Scores here worked out in percentages, so that extra questions can be added at any time without havig to rewrite the code."""
@@ -118,13 +124,19 @@ def quiz_completed():
 """Post quiz leaderboard rendering"""
 @app.route("/solar_quiz/leaderboard")
 def leaderboard():
+    session.clear() #Make sure no session exists when this page is accessed
     names_list = []
     with open('data/names.txt') as player_names:
-        names = player_names.read().splitlines()
         
-    """Following two lines suggested by tutor and ast imported"""
+        """Reading the names from the names.txt file"""
+        names = player_names.read().splitlines()
     for n in names:
-        names_list.append(ast.literal_eval(n))
+        
+        """load the names in names dictionary as a json file"""
+        names_list.append(json.loads(n))
+    
+    """Sorting the names on the leaderboard in score order."""
+    names_list = sorted(names_list, key=lambda k: int(k['score']), reverse=True) #ast removed following discussion with mentor and dictionary converted to a json file so that the leaderboard can be ordered.
     print(names_list)
     
     return render_template("leaderboard.html", page_heading="Current Leaderboard", player_names=names_list)
@@ -133,6 +145,7 @@ def leaderboard():
 
 """Running the functions and rendering pages from above"""
 if __name__ == "__main__":
+    """sess.init_app(app)"""
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
         debug=True)

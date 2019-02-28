@@ -1,18 +1,18 @@
 # Solar System Quiz - Practical Python Milestone Project
 
-This is my Milestone Project for the Practical Python part of the Full Stack Development Course. This site has been developed to give the user a basic understanding of the solar system. They can then test their knowledge by taking the quiz, and compare their performance with those of other users.
+This is my Milestone Project for the Practical Python part of the Full Stack Development Course. This site has been developed to give the user a basic understanding of the solar system. They can then test their knowledge by taking the quiz and compare their performance with those of other users.
 
 The site has the same background images throughout the site, creating a consistent feel and user experience. The Solar Info page contains information that may be of interest to the user and uses images and an interactive style that the user will find visually appealing.
 
 ## User Experience
 
-Before beginning the build of the site, I created wireframes of the site, to help with the design. These can be found in the following links:......................................
+Before beginning the build of the site, I created wireframes to help with the design. These can be found in the following link:
 
-### Example use of site
+### Example uses of site
 
 I have aimed to make this site easy to use and self explanitory in how to use it. The front page is simple with just a site overview, in basic overview of the two main following pages, the 'Solar System Info' page and the 'Take Quiz' page.
 
-At any time while on the site, the user will have access to the social media links, displayed in the footer of everyone of the pages, or can revert to the home page, by clicking the 'Solar System Quiz' writting, displayed at the top of every page.
+At any time while on the site, the user will have access to the social media links, displayed in the footer of every one of the pages, or can revert to the home page, by clicking the 'Solar System' writing, displayed at the top of every page. However, where necessary there are also return home buttons throughout the site.
 
 #### Home Page
 
@@ -38,21 +38,21 @@ A message is displayed to the user which varies depending on the score achieved 
 
 #### Leaderboard
 
-If the user clicks on this link they will be able to see the usernames and the scores of the previous users. They will be able to search the list and see where they stand. This page also carries a link back to the home page.
+If the user clicks on this link, they will be able to see the usernames and the scores of the previous users. They will be able to search the list and see where they stand. This page also carries a link back to the home page.
 
 ## Features
 
 ### Form 
 
-When the user clicks on this button they are taken to a page with a form which asks them to provide their first name, last name and a username. This is run through the 'solar-quiz.html' page. When the form is filled out, the first name, last name and the username is stored in the 'names.json' file These are called on later in the following pages.
+When the user clicks on this button, they are taken to a page with a form which asks them to provide their first name, last name and a username. This is run through the 'solar-quiz.html' page. When the form is filled out, the first name, last name and the username is stored in the 'names.json' file These are called on later in the following pages.
 
 ### Questions
 
-They are then taken to the quiz questions. They will then answer each of the questions. All questions need to answered as the radio buttons are set as 'required'. The quiz pages are implemented through the templates, solar-quiz.html, solar-quiz-user.html, questions.html, quiz-completed.html. When filling out the information on the solar-quiz page, the user initialises a cookie that is then stored for the rest of the quiz.
+They are then taken to the quiz questions. They will then answer each of the questions. All questions need to answer as the radio buttons are set as 'required'. The quiz pages are implemented through the templates, solar-quiz.html, solar-quiz-user.html, questions.html, quiz-completed.html. When filling out the information on the solar-quiz page, the user initialises a cookie that is then stored for the rest of the quiz.
 
 ### Quiz completed message
 
-The message is displayed using Python logic in 'run.py', and displayed using the 'quiz-complete.html'. The message dislayed depends on the . 
+The message is displayed using Python logic in 'run.py’ and displayed using the 'quiz-complete.html'. The message displayed depends on the score the player has got. 
 
 The message displayed varies depending on what the user scored. This is currently built in the run.py page with an if statement. Prior to this message being displayed the score as a percentage should be worked out. This would allow new questions to be added to the quiz without the need for the code in run.py to be changed.
 
@@ -60,18 +60,15 @@ The message displayed varies depending on what the user scored. This is currentl
 
 The leaderboard is presented on the 'leaderboard.html' page and its route is /solar_quiz/leaderboard. The leaderboard is there for players that want to see their performance compared to other players.
 
-### Features to Add
+### Extra Features that could be added
 
-.................................
-With the json files, new questions can be added 
-
-Another feature which could be implemented is to display the leaderboard in order of score.
+I would in the future consider adding a feature where when the form is completed it does a check for the existing usernames. If there is a clash the user would be asked for a different username.
 
 ## Technology Used
 
 This project was built using different languages, libraries and frameworks. 
 
-The site has been built using the Python based Flask framework (http://flask.pocoo.org/), and is run from the 'run.py' file. All the pages are routed from here, and contain the logic required for the quiz. Python has been used to create the logic within the 'run.py' file (https://www.python.org/). The 'jinja template engine' (http://jinja.pocoo.org/) has been ued within the templates html pages.
+The site has been built using the Python based Flask framework (http://flask.pocoo.org/) and is run from the 'run.py' file. All the pages are routed from here, and contain the logic required for the quiz. Python has been used to create the logic within the 'run.py' file (https://www.python.org/). The 'jinja template engine' (http://jinja.pocoo.org/) has been used within the templates html pages.
 
 The template pages have been written with HTML5 (http://www.html5.com/) and styled with CSS3 (www.css3.com) in the style.css file. CSS3 was used to create the mobile responsiveness seen across the whole site. It has also been used to create the hover effects for the buttons and the social icons. On each of the pages, you will find the jinja template engine used. A 'base.html' page has been created to contain the HTML code that is to be used on each of the pages i.e. The head, header and the footer.
 
@@ -79,62 +76,27 @@ On the 'Solar Info' page uses jQuery (https://jquery.com/) to reveal the extra i
 
 The data for the questions asked in the quiz, the information contained on the 'Solar Info' page, and the names gathered in the form when starting the quiz are contained in their own individual json files (https://json.org/). 
 
-Git was used throughout the project for version control. I also used the 'File Revision History' to revert when there was experementation with different design techniques.
+Git was used throughout the project for version control. I also used the 'File Revision History' to revert when there was experimentation with different design techniques.
 
 ## Testing
 
 The CSS was run through a CSS validator and errors were corrected. It now shows no errors. The javascript/jquery code was validated using jshint and showed no errors.
 
-The site has been tested manually by clicking the links to the pages, and checking all of the jQuery options. 
+The site has been tested manually by clicking the links to the pages and checking all of the jQuery options. It has also been tested in different browsers.
 
-The quiz has been completed many times in order to  
-
-
-
-
-
-
-
-
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+The quiz has been completed many times in order to check scores calculate correctly.
 
 ## Issues While Building the Project
 
-Session cookies
-Leaderboard not printing 
+At first, I was storing the variables in a separate text file and was then going to call them at the end and add them with score to a separate text file. Following advice from the tutor a session cookie was opened at the solar-quiz-user page and kept open to the end. The variable of score was set early at 0, and then 1 is added with each correct answer. This worked better, except for the following issue...
 
+When a username, first name and last name are filled out in the form a session cookie is initialised. This then is carried throughout the quiz to the quiz-completed page. I noticed that the session cookie remained open at this point. Therefore, if the user clicked the back arrow in their browser it would return to the last question (or further depending how many times the back arrow was clicked). They could then submit the answer again which would add to their score .......How problem eliminated?
 
-### Data Storage
-
-### Iterating over the Questions
-
-
+I have tried different methods of storing the data regarding the username, firstname and lastname of the users. The current site has them stored in a dictionary file and then they are read as a json file in the run.py file.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+This project has been deployed to Heroku by doing a git push. This create the site on the Heroku platform.
 
 ## Credits
 
@@ -152,7 +114,7 @@ All images of the planets and objects on the Solar Info Page were obtained from 
 
 The basis of the information was taken from various websites primarily wikipedia, but information was also obtained from the official NASA website and solarviews.com.
 
-I had help from the tutor support with this project as specified earlier.
+I had assistance from tutor support and the mentor on some of the areas of the project when I had difficulties as specified earlier. 
 
 
 

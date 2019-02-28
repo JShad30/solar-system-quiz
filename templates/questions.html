@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<!--Page heading as set in the run.py file-->
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
 </div>
+
+<!--html form for each of the questions-->
 <form method="POST" class="input-boxes">
     <div class="question-section">
+        
+        <!--Set the question title and the question according to questions.json file. Will be iterated around as in the get_question function in run.py-->
         <div class="intro-text">
-            <p class="intro-text"><span class="question-number">Question {{ question.id }}: </span>{{ question.question }}</p>
+            <p class="question"><span class="question-number">Question {{ question.id }}: </span>{{ question.question }}</p>
         </div>
+        
+        <!--Setting the choices to the questions as set in questions.json-->
         <div class="solar-body-overview solar-section">
             <div class="radio-button">
                 <label for="{{ question.choices[0] }}"><input class="radio-button-input" type="radio" id="option1" name="choice" value="{{ question.choices[0] }}" required/>{{ question.choices[0] }}</label>
@@ -22,7 +30,10 @@
                 <label for="{{ question.choices[3] }}"><input class="radio-button-input" type="radio" id="option4" name="choice" value="{{ question.choices[3] }}" required/>{{ question.choices[3] }}</label>
             </div>
         </div>
+        
     </div>
+    
+    <!--Submit button to record the form input. Whether the choice selected matches the correct answer (also set in questions.json) is set in get_question function in the run.py file-->
     <input type="submit" value="Submit Answer" id="begin-quiz" class="question-submit-button">
 </form>
 {% endblock %}

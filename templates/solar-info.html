@@ -1,18 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<!--Heading and introduction paragraph to the solar info page-->
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
     <p class="intro-text">This page contains all the answers you would need to take the quiz. Find out all you need to know about the solar system... and a bit beyond. You will find information about the orbits of the planets, their moons and their composition. Where you see the word AU(Astronomical Unit), it represents the distance between the Sun and Earth. For example, if you see 100AU, this means 100 times the distance of the Sun to the Earth.</p>
 </div>
-  
+
+<!--Info to be displayed collected from the solar-bodies-info.json-->  
 {% for solar_body in solar_bodies_data %}
 
 <div class="solar-body-section">
+    
+    <!--Name of the solar body-->
     <div class="solar-body-overview">
         <h3>{{ solar_body.name }}</h3>
     </div>
     <div class="solar-body">
         <div class="solar-body-overview solar-section">
+            
+<!--If statement will see which type of solar body the object is, according to solar-bodies-info.json and display the info accordingly. It will display the general overview of information about the solar body-->
 {% if solar_body.type.lower() == "planet" %}
             <p class="list">Type: {{ solar_body.type }}<p>
             <p class="list">Distance from Sun: {{ solar_body.distance_from_sun }}<p>
@@ -49,12 +56,17 @@
             <p class="list">Distance from sun: {{ solar_body.distance_from_sun }}<p>
             
 {% endif %}
+            
+            <!--More Info will trigger the jquery to display the description information from the solar-bodies-info.json-->
             <h4 class="solar-system-link"><button id="{{ solar_body.id }}" class="solar-system-button">More Info</button></h4>
             <p class="description {{ solar_body.id }}">{{ solar_body.description }}</p>
         </div>
+        
+        <!--Image-->
         <div class="solar-body-image solar-section">
             <img src="{{ solar_body.image_source }}" alt="picture of {{ solar_body.name }}" width="100%" />
         </div>
+        
     </div>
 </div>
 
@@ -76,8 +88,12 @@
     <div class="text-overview">
         <h3>Take the quiz</h3>
         <p class="intro-text">Now you've been through the information, you should be in a position to take the test. Be sure to look at the leaderboard to see how you compare when you've finished. If you do not score well, don't worry. You will be able to come back to the info page and brush up on your knowledge at any time. Good Luck!</p>
-        <h4 class="solar-system-link-info-page"><a href="{{ url_for('solar_quiz') }}">Take Quiz</a></h4>
     </div>
+</div>
+
+<div class="solar-info-bottom-buttons">
+    <h4 class="leaderboard-link"><a href="{{ url_for('solar_quiz') }}">Take Quiz</a></h4>
+    <h4 class="leaderboard-link"><a href="{{ url_for('index') }}">Return Home</a></h4>
 </div>
 
 {% endblock %}

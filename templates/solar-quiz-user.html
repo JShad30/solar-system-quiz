@@ -2,15 +2,20 @@
 {% block content %}
 <div class="intro-text">
     <h2>{{ page_heading }}</h2>
+    
+    <!--Message set depending on the username and name given-->
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for message in messages %}
     <div class="text-overview">
         <p>{{ message }}</p>
+        
+        <!--Link to the first question-->
         <h4 class="solar-system-link"><a href="{{ url_for('get_question', username=username, firstname=firstname, lastname=lastname, id = 1) }}">First Question</a></h4>
     </div>
     {% endfor %}
     {% endif %}
     {% endwith %}
+    
 </div>
 {% endblock %}

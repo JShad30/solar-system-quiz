@@ -1,6 +1,6 @@
 # Solar System Quiz - Practical Python Milestone Project
 
-This is my Milestone Project for the Practical Python part of the Full Stack Development Course. This site has been developed to give the user a basic understanding of the solar system. They can then test their knowledge by taking the quiz and compare their performance with those of other users.
+This is my Milestone Project for the Practical Python module of the Full Stack Development Course. This site has been developed to give the user a basic understanding of the solar system. They can then test their knowledge by taking the quiz and compare their performance against other users.
 
 The site has the same background images throughout the site, creating a consistent feel and user experience. The Solar Info page contains information that may be of interest to the user and uses images and an interactive style that the user will find visually appealing.
 
@@ -10,9 +10,9 @@ Before beginning the build of the site, I created wireframes to help with the de
 
 ### Example uses of site
 
-I have aimed to make this site easy to use and self explanitory in how to use it. The front page is simple with just a site overview, in basic overview of the two main following pages, the 'Solar System Info' page and the 'Take Quiz' page.
+I have aimed to make this site easy to use and self explanitory in how to use it. The front page is simple with just a site overview, and an introduction to the two main following pages, the 'Solar System Info' page and the 'Take Quiz' page.
 
-At any time while on the site, the user will have access to the social media links, displayed in the footer of every one of the pages, or can revert to the home page, by clicking the 'Solar System' writing, displayed at the top of every page. However, where necessary there are also return home buttons throughout the site.
+While on the site the user will have access to the social media links displayed in the footer on every page. They can also revert to the home page by clicking the 'Solar System' logo displayed at the top of every page. However, where necessary there are also return home buttons throughout the site.
 
 #### Home Page
 
@@ -20,17 +20,17 @@ The homepage of this site contains an overview to introduce the user, and two li
 
 #### Solar Info Page
 
-For those interested to learn more about the solar system, they can click on the solar info page. This displays information about the subject, and images of the objects are displayed through the page. Each object has a brief overview, which can be expanded to show more information if the user clicks the 'More Info' button. At the end of this page there is a link direct to the quiz.
+For those interested to learn more about the solar system, they can click on the solar info page. This provides information about the subject, and images of the objects are displayed. Each object has a brief overview, which can be expanded to show more information should the user click the 'More Info' button. At the end of this page there is a direct link to the quiz.
 
 #### Take Quiz
 
-The 'Take Quiz' page can be linked to from the home page or the bottom of the 'Solar System Info' page. 
+The 'Take Quiz' page can be linked to from the home page or the from bottom of the 'Solar System Info' page. 
 
-Once the submit button has been selected the user is provided with a message, which is different depending on the score they achieved. If they want to see the leaderboard they can go here. Usernames are used on the leaderboard, as not all players would necessarily want their names listed against their score. 
+When on this page, they are asked to provide a firstname, lastname and username. When the submit button is selected they are taken to a message, which introduces them to the quiz and a button to take them to the first question.
 
 #### Questions
 
-The questions are listed and need to be answered. When finished the user can click the 'Submit' button and be take through to the quiz completed section.
+Each question is displayed individually and needs to be answered. Once an answer is submitted the quiz then moves onto the next question. Once all questions have been answered the user can click the 'Submit' button. They will then be taken through to the quiz completed section.
 
 #### Quiz Completed
 
@@ -38,7 +38,7 @@ A message is displayed to the user which varies depending on the score achieved 
 
 #### Leaderboard
 
-If the user clicks on this link, they will be able to see the usernames and the scores of the previous users. They will be able to search the list and see where they stand. This page also carries a link back to the home page.
+If the user clicks on this link, they will be able to see the usernames and the scores of the previous users. They will be able to search the list and see where they stand. This page also carries a link back to the solar system info where they can learn more or choose to go back to the home page.
 
 ## Features
 
@@ -52,13 +52,11 @@ They are then taken to the quiz questions. They will then answer each of the que
 
 ### Quiz completed message
 
-The message is displayed using Python logic in 'run.py’ and displayed using the 'quiz-complete.html'. The message displayed depends on the score the player has got. 
-
-The message displayed varies depending on what the user scored. This is currently built in the run.py page with an if statement. Prior to this message being displayed the score as a percentage should be worked out. This would allow new questions to be added to the quiz without the need for the code in run.py to be changed.
+The message is displayed using Python logic in 'run.py’ and displayed using the 'quiz-complete.html'. The flashed message displayed depends on the score player has acheived. 
 
 ### Leaderboard
 
-The leaderboard is presented on the 'leaderboard.html' page and its route is /solar_quiz/leaderboard. The leaderboard is there for players that want to see their performance compared to other players.
+The leaderboard is presented on the 'leaderboard.html' page and its route is /solar_quiz/leaderboard. The leaderboard is there for players so that they can compare their performance to other players.
 
 ### Extra Features that could be added
 
@@ -68,13 +66,13 @@ I would in the future consider adding a feature where when the form is completed
 
 This project was built using different languages, libraries and frameworks. 
 
-The site has been built using the Python based Flask framework (http://flask.pocoo.org/) and is run from the 'run.py' file. All the pages are routed from here, and contain the logic required for the quiz. Python has been used to create the logic within the 'run.py' file (https://www.python.org/). The 'jinja template engine' (http://jinja.pocoo.org/) has been used within the templates html pages.
+The site has been built using the Python based Flask framework (http://flask.pocoo.org/) and is run from the 'run.py' file. All the pages are routed from here, and contain the logic required for the quiz. Python has been used to create the logic within the 'run.py' file (https://www.python.org/). The 'jinja template engine' (http://jinja.pocoo.org/) has been used within the template pages.
 
-The template pages have been written with HTML5 (http://www.html5.com/) and styled with CSS3 (www.css3.com) in the style.css file. CSS3 was used to create the mobile responsiveness seen across the whole site. It has also been used to create the hover effects for the buttons and the social icons. On each of the pages, you will find the jinja template engine used. A 'base.html' page has been created to contain the HTML code that is to be used on each of the pages i.e. The head, header and the footer.
+The template pages have been written with HTML5 (http://www.html5.com/) and styled with CSS3 (www.css3.com) in the style.css file. CSS3 was used to create the mobile responsiveness seen across the whole site. It has also been used to create the hover effects for the buttons and the social icons. On each of the pages, you will find the jinja template engine used. A 'base.html' page has been created to contain the HTML code that is to be used on each of the pages i.e. the head, header and the footer.
 
-On the 'Solar Info' page uses jQuery (https://jquery.com/) to reveal the extra information if the user clicks on the 'More Info' button. When one of these buttons is selected, a 'slideToggle' instruction is used. The other solar objects information has a 'slideUp' instruction placed on it meaning that only one object will have its information revealed at any one time. jQuery is also used in the navbar which changes from transparent to black when the user scrolls down the page.
+On the 'Solar Info' page jQuery (https://jquery.com/) has been used to reveal the extra information if the user clicks on the 'More Info' button. When one of these buttons is selected, a 'slideToggle' instruction is used. The other solar objects information has a 'slideUp' instruction placed on it. This means that only one object will have its information revealed at any one time. jQuery is also used in the navbar which changes from transparent to black when the user scrolls down the page.
 
-The data for the questions asked in the quiz, the information contained on the 'Solar Info' page, and the names gathered in the form when starting the quiz are contained in their own individual json files (https://json.org/). 
+The data for the questions asked in the quiz and the information contained on the 'Solar Info' page (https://json.org/) are stored in their own json files. The information collected from the from, i.e. username, firstname, lastname, and score are stored in a .txt file as a dictionary, and this is read as a json file in the leaderboard page. 
 
 Git was used throughout the project for version control. I also used the 'File Revision History' to revert when there was experimentation with different design techniques.
 
@@ -88,15 +86,13 @@ The quiz has been completed many times in order to check scores calculate correc
 
 ## Issues While Building the Project
 
-At first, I was storing the variables in a separate text file and was then going to call them at the end and add them with score to a separate text file. Following advice from the tutor a session cookie was opened at the solar-quiz-user page and kept open to the end. The variable of score was set early at 0, and then 1 is added with each correct answer. This worked better, except for the following issue...
-
-When a username, first name and last name are filled out in the form a session cookie is initialised. This then is carried throughout the quiz to the quiz-completed page. I noticed that the session cookie remained open at this point. Therefore, if the user clicked the back arrow in their browser it would return to the last question (or further depending how many times the back arrow was clicked). They could then submit the answer again which would add to their score .......How problem eliminated?
+When a username, first name and last name are filled out in the form a session cookie is initialised. This then is carried throughout the quiz to the quiz-completed page. I noticed that the session cookie remained open at this point. Therefore, if the user clicked the back arrow in their browser it would return to the last question (or further depending how many times the back arrow was clicked). They could then submit the answer again which would add to their score increasing. This was eliminated after a discussion with my mentor that can be seen in lines 64-70 of the run.py file, which redirects the user to the current question.
 
 I have tried different methods of storing the data regarding the username, firstname and lastname of the users. The current site has them stored in a dictionary file and then they are read as a json file in the run.py file.
 
 ## Deployment
 
-This project has been deployed to Heroku by doing a git push. This create the site on the Heroku platform.
+This project has been deployed to Heroku. This create the site on the Heroku platform.
 
 ## Credits
 

@@ -8,7 +8,7 @@
 
 /*Main image*/
 .content {
-    background-image: url("../images/stars.jpg");
+    background-image: url("../images/milky-way-background.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -289,6 +289,14 @@
     margin: 20px 0 0 0;
 }
 
+.quiz-section-info-page div h4 a {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /*Quiz Page*/
 
 .name-input-section {
@@ -455,6 +463,14 @@
     font-size: 1.6em;
     font-weight: 900;
     text-align: center;
+}
+
+.leaderboard-page-buttons h4 a {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Buttons at the bottom of the leaderboard*/

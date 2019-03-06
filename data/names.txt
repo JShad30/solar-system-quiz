@@ -1,4 +1,7 @@
 {"username": "j_shad86", "firstname": "James", "lastname": "Shadrake", "score": "20"}
 {"username": "n_attempt123", "firstname": "Next", "lastname": "Attempt", "score": "12"}
-{"username": "ertyuio", "firstname": "wefrgthyjuki", "lastname": "wertyui", "score": "7"}
-{"username": "ewrtyuil", "firstname": "ertyujh", "lastname": "retyuio", "score": "6"}
+{"username": "georgew", "firstname": "George", "lastname": "Washington", "score": "11"}
+{"username": "Marko", "firstname": "Mark", "lastname": "Armstrong", "score": "17"}
+{"username": "docker", "firstname": "John", "lastname": "Shadwell", "score": "16"}
+{"username": "BriSmi", "firstname": "Brian", "lastname": "Smith", "score": "5"}
+{"username": "Bowler", "firstname": "Fred", "lastname": "Johnson", "score": "19"}

@@ -68,18 +68,12 @@ def get_question(username, id):
         return redirect(url_for("get_question", username=session['username'], id=1))
     if 'id' in session and id < session['id']:
         return redirect(url_for("get_question", username=session['username'], id=session['id']))
-    
-    # questions = []
-    # print(request.form.items()) #Mentor suggestion to show in console below
-    # with open("data/questions.json", "r") as json_data:
         
     """Loading the questions, choices and answers from the questions json file"""
-    # questions = json.load(json_data)
     q = questions[id - 1]["question"]
     c = questions[id - 1]["choices"]
     a = questions[id - 1]["answer"]
     
-    # for q in questions:
     if request.method == "POST":
         answer_given = request.form["choice"] #Variable answer_given finds which was selected in questions.py
         """increase value of score by 1 if correct_answer is the same as answer_given"""

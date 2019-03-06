@@ -102,7 +102,9 @@ I have tried different methods of storing the data regarding the username, first
 
 ## Deployment
 
-This project has been deployed to Heroku. This create the site on the Heroku platform.
+This project has been deployed to both Github and Heroku, by using the push command in the terminal.
+
+The files on Github can be found via https://github.com/JShad30/solar-system-quiz, and the website can be viewed via https://solar-system-quiz.herokuapp.com/.
 
 ## Credits
 

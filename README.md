@@ -6,7 +6,7 @@ The site uses the same background images throughout the site, creating a consist
 
 ## User Experience
 
-Before beginning the build of the site, I created wireframes to help with the design. These can be found in the following link:.....................
+Before beginning the build of the site, I created wireframes to help with the design. These can be found in the following link: https://github.com/JShad30/solar-system-quiz/tree/master/wireframes
 
 ### Example uses of site
 
@@ -69,17 +69,21 @@ More questions could be added to the questions.json file, from which twenty ques
 This project was built using different languages, libraries and frameworks. 
 
 ### Python
+
 The site has been built using the Python based Flask framework (http://flask.pocoo.org/) and is run from the 'run.py' file. All the pages are routed from here, and contain the logic required for the quiz. Python has been used to create the logic within the 'run.py' file (https://www.python.org/). The 'jinja template engine' (http://jinja.pocoo.org/) has been used within the template pages.
 
 ### Frontend
+
 The template pages have been written with HTML5 (http://www.html5.com/) and styled with CSS3 (www.css3.com) in the style.css file. CSS3 was used to create the mobile responsiveness seen across the whole site. It has also been used to create the hover effects for the buttons and the social icons. On each of the pages, you will find the jinja template engine used. A 'base.html' page has been created to contain the HTML code that is to be used on each of the pages i.e. the head, header and the footer.
 
 On the 'Solar System Info' page jQuery (https://jquery.com/) has been used to reveal the extra information if the user clicks on the 'More Info' button. When one of these buttons is selected, a 'slideToggle' instruction is used. The other solar objects information has a 'slideUp' instruction placed on it. This means that only one object will have its information revealed at any one time. jQuery is also used in the navbar which changes from transparent to black when the user scrolls down the page.
 
 ### Data Storage
+
 The data for the questions asked in the quiz and the information contained on the 'Solar System Info' page (https://json.org/) are stored in their own json files. The information collected from the from, i.e. username, firstname, lastname, and score are stored in a .txt file as a dictionary, and this is read as a json file in the leaderboard page. 
 
 ### Version Control
+
 Git was used throughout the project for version control. I also used the 'File Revision History' to revert when there was experimentation with different design techniques.
 
 ## Testing

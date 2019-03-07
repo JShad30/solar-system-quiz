@@ -102,9 +102,11 @@ I have tried different methods of storing the data regarding the username, first
 
 ## Deployment
 
-This project has been deployed to both Github and Heroku, by using the push command in the terminal.
+This project has been deployed to both Github and Heroku by using the push command in the terminal.
 
-The files on Github can be found via https://github.com/JShad30/solar-system-quiz, and the website can be viewed via https://solar-system-quiz.herokuapp.com/.
+If you would like to contribute to the project can be cloned or downloaded from the Github link provided below. Questions can also be added to the questions.json file, although the quiz_completed function in run.py will need to be updated to show the new number of questions.
+
+The individual files on Github can be found via https://github.com/JShad30/solar-system-quiz, and the website can be viewed via https://solar-system-quiz.herokuapp.com/.
 
 ## Credits
 

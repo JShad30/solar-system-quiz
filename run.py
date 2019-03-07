@@ -49,7 +49,7 @@ def solar_quiz():
         session['firstname'] = firstname
         session['lastname'] = lastname
         session['score'] = score
-        """Setting the Variables"""
+        """Intro message"""
         flash("Thanks for playing {0}. Your username is {1}, so be sure to look for it on the leaderboard at the end".format(request.form["firstname"], request.form["username"]))
         return render_template("solar-quiz-user.html", page_heading="Solar System Quiz", username=username, firstname=firstname, lastname=lastname)
         
@@ -58,7 +58,7 @@ def solar_quiz():
 
 
 """Iterating through the questions from the solar-bodies-info.json file"""    
-@app.route("/solar_quiz/<username>/question/<int:id>", methods=["GET", "POST"]) #How to put the button in this part of the file to iterate through the questions?
+@app.route("/solar_quiz/<username>/question/<int:id>", methods=["GET", "POST"])
 def get_question(username, id):
     
     """With help from the mentor, the following lines were put together to redirect the user if they pressed a button other than submit on the questions. This stopped the issue of the user going back a question, resubmitting their answer and the score being added twice"""

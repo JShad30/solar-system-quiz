@@ -43,14 +43,13 @@ def solar_quiz():
         username = request.form["username"]
         firstname = request.form["firstname"]
         lastname = request.form["lastname"]
-        
         score = 0 #Set the score variable to be used in get_question to 0
         """Creating the sessions for the variables"""
         session['username'] = username
         session['firstname'] = firstname
         session['lastname'] = lastname
         session['score'] = score
-        """Intro message"""
+        """Setting the Variables"""
         flash("Thanks for playing {0}. Your username is {1}, so be sure to look for it on the leaderboard at the end".format(request.form["firstname"], request.form["username"]))
         return render_template("solar-quiz-user.html", page_heading="Solar System Quiz", username=username, firstname=firstname, lastname=lastname)
         
@@ -59,41 +58,44 @@ def solar_quiz():
 
 
 """Iterating through the questions from the solar-bodies-info.json file"""    
-@app.route("/solar_quiz/<username>/question/<int:id>", methods=["GET", "POST"])
+@app.route("/solar_quiz/<username>/question/<int:id>", methods=["GET", "POST"]) #How to put the button in this part of the file to iterate through the questions?
 def get_question(username, id):
-    
-    """With help from the mentor, the following lines were put together to redirect the user if they pressed a button other than submit on the questions. This stopped the issue of the user going back a question, resubmitting their answer and the score being added twice"""
-    print('request.method={}'.format(request.method))
     print('last -> session={} and id={}'.format(session, id))
-    if 'id' not in session and id > 1:
+    if id not in session and id > 1:
         return redirect(url_for("get_question", username=session['username'], id=1))
-    if 'id' in session and id < session['id']:
-        return redirect(url_for("get_question", username=session['username'], id=session['id']))
-        
-    """Loading the questions, choices and answers from the questions json file"""
-    q = questions[id - 1]["question"]
-    c = questions[id - 1]["choices"]
-    a = questions[id - 1]["answer"]
+    if id in session and id < session['id']-1:
+        return redirect(url_for("get_question", username=session['username'], id=session['id']-1))
     
-    if request.method == "POST":
-        answer_given = request.form["choice"] #Variable answer_given finds which was selected in questions.py
-        """increase value of score by 1 if correct_answer is the same as answer_given"""
-        if answer_given.lower() == a.lower(): #Check whether answer given and correct answer are the same
-            session['score'] += 1 #if so add 1
-        """Check in terminal that answers given and answer were the same, and that score was being added correctly"""
-        print(answer_given.lower())
-        print(a.lower())
-        print(session['score'])
+    questions = []
+    print(request.form.items()) #Mentor suggestion to show in console below
+    print(request.form.items()) #Mentor suggestion to show in console below
         
-        """Add one to id"""
-        id += 1
-        session['id'] = id
-        if id > len(questions):
-            return redirect(url_for("quiz_completed"))
-            
-        return redirect(url_for("get_question", username=session['username'], id=id))
+        """Loading the questions, choices and answers from the questions json file"""
+        questions = json.load(json_data)
+        q = questions[id - 1]["question"]
+        c = questions[id - 1]["choices"]
+        a = questions[id - 1]["answer"]
         
-    return render_template("questions.html", page_heading="Quiz Questions", question=questions[id - 1], username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score'], id=id)
+        for q in questions:
+            if request.method == "POST":
+                answer_given = request.form["choice"] #Variable answer_given finds which was selected in questions.py
+                """increase value of score by 1 if correct_answer is the same as answer_given"""
+                if answer_given.lower() == a.lower(): #Check whether answer given and correct answer are the same
+                    session['score'] += 1 #if so add 1
+                """Check in terminal that answers given and answer were the same, and that score was being added correctly"""
+                print(answer_given.lower())
+                print(a.lower())
+                print(session['score'])
+                
+                """Add one to id"""
+                id += 1
+                session["id"] = id
+                if id > 3:
+                    return redirect(url_for("quiz_completed", page_heading="Quiz Completed", username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score']))
+                    
+                return redirect(url_for("get_question", username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score'], id=id))
+                
+            return render_template("questions.html", page_heading="Quiz Questions", question=questions[id - 1], username=session['username'], firstname=session['firstname'], lastname=session['lastname'], score=session['score'], id=id)
             
             
 
